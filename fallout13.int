@@ -1,0 +1,11 @@
+// BEGIN_INTERNALS
+/*
+LAST_COMPILE_TIME: 1459805583
+DIR: code code\controllers code\controllers\subsystem code\game code\game\jobs code\game\jobs\job code\game\objects code\game\objects\effects\decals code\game\objects\items code\game\objects\items\weapons\implants code\game\turfs code\game\turfs\simulated code\game\turfs\simulated\floor code\game\turfs\space code\modules code\modules\irradiation code\modules\mob code\modules\mob\living code\modules\mob\living\carbon code\modules\mob\living\carbon\human code\modules\mob\new_player code\modules\shuttle icons icons\misc 
+AUTO_FILE_DIR: ON
+MAP_ICON_TYPE: 0
+LAST_COMPILE_VERSION: 508.1299
+WINDOW: code\game\turfs\turf.dm;code\modules\mob\living\carbon\human\species.dm;code\modules\mob\living\carbon\human\species_types.dm;code\modules\mob\living\carbon\carbon.dm;code\game\turfs\space\monorail.dm;code\game\objects\items\mines.dm;code\game\jobs\job\scavenger.dm
+FILE: code\game\turfs\space\monorail.dm
+*/
+// END_INTERNALS
