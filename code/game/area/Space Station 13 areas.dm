@@ -134,7 +134,7 @@ var/list/teleportlocs = list()
 	name = "Escape Pod Four"
 
 /area/shuttle/mining
-	name = "Mining Shuttle"
+	name = "Mining lift"
 
 /area/shuttle/labor
 	name = "Labor Camp Shuttle"
@@ -143,7 +143,7 @@ var/list/teleportlocs = list()
 	name = "Supply Shuttle"
 
 /area/shuttle/escape
-	name = "Emergency Shuttle"
+	name = "Train"
 
 /area/shuttle/transport
 	name = "Transport Shuttle"
@@ -175,7 +175,7 @@ var/list/teleportlocs = list()
 	blob_allowed = 0 //Should go without saying, no blobs should take over centcom as a win condition.
 
 /area/centcom/control
-	name = "Centcom Docks"
+	name = "Vault-tec HQ raiway station"
 
 /area/centcom/evac
 	name = "Centcom Recovery Ship"
@@ -187,7 +187,7 @@ var/list/teleportlocs = list()
 	name = "Centcom Transport Shuttle Dock"
 
 /area/centcom/prison
-	name = "Admin Prison"
+	name = "Enclave Prison"
 
 /area/centcom/holding
 	name = "Holding Facility"
@@ -195,24 +195,24 @@ var/list/teleportlocs = list()
 //SYNDICATES
 
 /area/syndicate_mothership
-	name = "Syndicate Mothership"
+	name = "Enclave Mothership"
 	icon_state = "syndie-ship"
 	requires_power = 0
 	has_gravity = 1
 	blob_allowed = 0 //Not... entirely sure this will ever come up... but if the bus makes blobs AND ops, it shouldn't aim for the ops to win.
 
 /area/syndicate_mothership/control
-	name = "Syndicate Control Room"
+	name = "Enclave Control Room"
 	icon_state = "syndie-control"
 
 /area/syndicate_mothership/elite_squad
-	name = "Syndicate Elite Squad"
+	name = "Enclave Elite Squad"
 	icon_state = "syndie-elite"
 
 //EXTRA
 
 /area/asteroid
-	name = "Asteroid"
+	name = "Mines"
 	icon_state = "asteroid"
 	requires_power = 0
 	has_gravity = 1
@@ -220,12 +220,12 @@ var/list/teleportlocs = list()
 	valid_territory = 0
 
 /area/asteroid/cave
-	name = "Asteroid - Underground"
+	name = "Mines - Underground"
 	icon_state = "cave"
 	requires_power = 0
 
 /area/asteroid/artifactroom
-	name = "Asteroid - Artifact"
+	name = "Mines - Artifact"
 	icon_state = "cave"
 
 /area/asteroid/artifactroom/New()
@@ -455,27 +455,27 @@ var/list/teleportlocs = list()
 //Hallway
 
 /area/hallway/primary/fore
-	name = "Fore Primary Hallway"
+	name = "North Hallway"
 	icon_state = "hallF"
 
 /area/hallway/primary/starboard
-	name = "Starboard Primary Hallway"
+	name = "East Hallway"
 	icon_state = "hallS"
 
 /area/hallway/primary/aft
-	name = "Aft Primary Hallway"
+	name = "West hallway"
 	icon_state = "hallA"
 
 /area/hallway/primary/port
-	name = "Port Primary Hallway"
+	name = "South hallway"
 	icon_state = "hallP"
 
 /area/hallway/primary/central
-	name = "Central Primary Hallway"
+	name = "Atrium"
 	icon_state = "hallC"
 
 /area/hallway/secondary/exit
-	name = "Escape Shuttle Hallway"
+	name = "Railway station"
 	icon_state = "escape"
 
 /area/hallway/secondary/construction
@@ -483,23 +483,23 @@ var/list/teleportlocs = list()
 	icon_state = "construction"
 
 /area/hallway/secondary/entry
-	name = "Arrival Shuttle Hallway"
+	name = "Vault Entry"
 	icon_state = "entry"
 
 //Command
 
 /area/bridge
-	name = "Bridge"
+	name = "Administration wing"
 	icon_state = "bridge"
 	music = "signal"
 
 /area/bridge/meeting_room
-	name = "Heads of Staff Meeting Room"
+	name = "Heads of Vault Meeting Room"
 	icon_state = "meeting"
 	music = null
 
 /area/crew_quarters/captain
-	name = "Captain's Office"
+	name = "Overseer's Office"
 	icon_state = "captain"
 
 /area/crew_quarters/courtroom
@@ -616,7 +616,7 @@ var/list/teleportlocs = list()
 	icon_state = "engine_smes"
 
 /area/engine/engineering
-	name = "Engineering"
+	name = "Reactor level"
 	icon_state = "engine"
 
 /area/engine/break_room
@@ -724,18 +724,18 @@ var/list/teleportlocs = list()
 //MedBay
 
 /area/medical/medbay
-	name = "Medbay"
+	name = "Clinic"
 	icon_state = "medbay"
 	music = 'sound/ambience/signal.ogg'
 
 //Medbay is a large area, these additional areas help level out APC load.
 /area/medical/medbay2
-	name = "Medbay"
+	name = "Clinic"
 	icon_state = "medbay2"
 	music = 'sound/ambience/signal.ogg'
 
 /area/medical/medbay3
-	name = "Medbay"
+	name = "Clinic"
 	icon_state = "medbay3"
 	music = 'sound/ambience/signal.ogg'
 
@@ -789,7 +789,7 @@ var/list/teleportlocs = list()
 	icon_state = "cloning"
 
 /area/medical/sleeper
-	name = "Medbay Treatment Center"
+	name = "Clinic Treatment Center"
 	icon_state = "exam_room"
 
 //Security
@@ -799,7 +799,7 @@ var/list/teleportlocs = list()
 	icon_state = "security"
 
 /area/security/brig
-	name = "Brig"
+	name = "Jail"
 	icon_state = "brig"
 
 /area/security/prison
@@ -811,7 +811,7 @@ var/list/teleportlocs = list()
 	icon_state = "sec_prison"
 
 /area/security/warden
-	name = "Brig Control"
+	name = "Jail Control"
 	icon_state = "Warden"
 
 /area/security/armory
@@ -900,11 +900,11 @@ var/list/teleportlocs = list()
 ////////////WORK IN PROGRESS//////////
 
 /area/quartermaster/office
-	name = "Cargo Office"
+	name = "MainStorage"
 	icon_state = "quartoffice"
 
 /area/quartermaster/storage
-	name = "Cargo Bay"
+	name = "Main Storage"
 	icon_state = "quartstorage"
 
 /area/quartermaster/qm
@@ -1319,7 +1319,7 @@ var/list/teleportlocs = list()
 
 // Away Missions
 /area/awaymission
-	name = "Strange Location"
+	name = "Wasteland"
 	icon_state = "away"
 	has_gravity = 1
 
