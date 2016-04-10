@@ -12,7 +12,7 @@
 	pressure_resistance = 1
 
 /obj/item/documents/nanotrasen
-	desc = "\"Top Secret\" Nanotrasen documents printed on special copy-protected paper. It is filled with complex diagrams and lists of names, dates and coordinates."
+	desc = "\"Top Secret\" Vault documents printed on special copy-protected paper. It is filled with complex diagrams and lists of names, dates and coordinates."
 	icon_state = "docs_verified"
 
 /obj/item/documents/syndicate

@@ -49,7 +49,7 @@
 	name = "construction permit"
 	icon_state = "permit"
 	desc = "This is a one-use permit that allows the user to offically declare a built room as new addition to the station."
-	fluffnotice = "Nanotrasen Engineering requires all on-station construction projects to be approved by a head of staff, as detailed in Nanotrasen Company Regulation 512-C (Mid-Shift Modifications to Company Property). \
+	fluffnotice = "Vault-tec Engineering requires all inside-Vault construction projects to be approved by a head of staff, as detailed in Vault-tec Company Regulation 512-C (Mid-Shift Modifications to Company Property). \
 						By submitting this form, you accept any fines, fees, or personal injury/death that may occur during construction."
 	w_class = 1
 
@@ -77,7 +77,7 @@
 	desc = "Blueprints of the station. There is a \"Classified\" stamp and several coffee stains on it."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "blueprints"
-	fluffnotice = "Property of Nanotrasen. For heads of staff only. Store in high-secure storage."
+	fluffnotice = "Property of Vault-tec. For heads of staff only. Store in high-secure storage."
 
 
 /obj/item/areaeditor/blueprints/attack_self(mob/user)

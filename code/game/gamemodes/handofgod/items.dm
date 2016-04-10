@@ -5,7 +5,7 @@
 	icon = 'icons/obj/items.dmi'
 	icon_state = "banner"
 	item_state = "banner"
-	desc = "A banner with Nanotrasen's logo on it."
+	desc = "A banner with Vault-tec's logo on it."
 	var/moralecooldown = 0
 	var/moralewait = 600
 
@@ -64,8 +64,8 @@
 
 
 /obj/item/weapon/storage/backpack/bannerpack
-	name = "nanotrasen banner backpack"
-	desc = "It's a backpack with lots of extra room.  A banner with Nanotrasen's logo is attached, that can't be removed."
+	name = "vault-tec banner backpack"
+	desc = "It's a backpack with lots of extra room.  A banner with Vault-tec's logo is attached, that can't be removed."
 	max_combined_w_class = 27 //6 more then normal, for the tradeoff of declaring yourself an antag at all times.
 	icon_state = "bannerpack"
 

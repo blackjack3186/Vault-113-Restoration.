@@ -225,7 +225,7 @@
 					target.Weaken(12)
 					sleep(20)
 					if(isloyal(target))
-						user << "<span class='notice'>They are enslaved by Nanotrasen. You begin to shut down the nanobot implant - this will take some time.</span>"
+						user << "<span class='notice'>They are enslaved by Vault-tec. You begin to shut down the nanobot implant - this will take some time.</span>"
 						user.visible_message("<span class='warning'>[user] pauses, then dips their head in concentration!</span>")
 						target << "<span class='boldannounce'>You feel your loyalties begin to weaken!</span>"
 						sleep(100) //10 seconds - not spawn() so the enthralling takes longer
@@ -234,7 +234,7 @@
 						for(var/obj/item/weapon/implant/loyalty/L in target)
 							if(L && L.implanted)
 								qdel(L)
-						target << "<span class='boldannounce'>Your unwavering loyalty to Nanotrasen unexpectedly falters, dims, dies.</span>"
+						target << "<span class='boldannounce'>Your unwavering loyalty to Vault-tec unexpectedly falters, dims, dies.</span>"
 				if(3)
 					user << "<span class='notice'>You begin planting the tumor that will control the new thrall...</span>"
 					user.visible_message("<span class='warning'>A strange energy passes from [user]'s hands into [target]'s head!</span>")

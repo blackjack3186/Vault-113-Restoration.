@@ -1,6 +1,6 @@
 /obj/item/wallframe/camera
 	name = "camera assembly"
-	desc = "The basic construction for Nanotrasen-Always-Watching-You cameras."
+	desc = "The basic construction for Vault-tec-Always-Watching-You cameras."
 	icon = 'icons/obj/monitors.dmi'
 	icon_state = "cameracase"
 	materials = list(MAT_METAL=400, MAT_GLASS=250)
@@ -9,7 +9,7 @@
 
 /obj/machinery/camera_assembly
 	name = "camera assembly"
-	desc = "The basic construction for Nanotrasen-Always-Watching-You cameras."
+	desc = "The basic construction for Vault-tec-Always-Watching-You cameras."
 	icon = 'icons/obj/monitors.dmi'
 	icon_state = "camera1"
 	//	Motion, EMP-Proof, X-Ray

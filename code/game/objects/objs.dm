@@ -12,6 +12,7 @@
 	var/burn_state = FIRE_PROOF // LAVA_PROOF | FIRE_PROOF | FLAMMABLE | ON_FIRE
 	var/burntime = 10 //How long it takes to burn to ashes, in seconds
 	var/burn_world_time //What world time the object will burn up completely
+	var/being_shocked = 0
 
 /obj/Destroy()
 	if(!istype(src, /obj/machinery))
@@ -189,3 +190,13 @@
 		Item.loc = new_loc
 		if(burn)
 			Item.fire_act() //Set them on fire, too
+
+/obj/proc/tesla_act(var/power)
+	being_shocked = 1
+	var/power_bounced = power / 2
+	tesla_zap(src, 3, power_bounced)
+	spawn(10)
+		reset_shocked()
+
+/obj/proc/reset_shocked()
+	being_shocked = 0
