@@ -27,21 +27,20 @@ list(name = "- Syndicate Recruitment", desc = " See the galaxy! Shatter corrupt 
 list(name = "- Clown", desc = " Honk."),
 list(name = "- Smoke", desc = " A poster advertising a rival corporate brand of cigarettes."),
 list(name = "- Grey Tide", desc = " A rebellious poster symbolizing assistant solidarity."),
-list(name = "- Missing Gloves", desc = " This poster references the uproar that followed Nanotrasen's financial cuts toward insulated-glove purchases."),
-list(name = "- Hacking Guide", desc = " This poster details the internal workings of the common Nanotrasen airlock. Sadly, it appears out of date."),
-list(name = "- RIP Badger", desc = " This seditious poster references Nanotrasen's genocide of a space station full of badgers."),
+list(name = "- Missing Gloves", desc = " This poster references the uproar that followed Vault-tec's financial cuts toward insulated-glove purchases."),
+list(name = "- Hacking Guide", desc = " This poster details the internal workings of the common Vault airlock. Sadly, it appears out of date."),
 list(name = "- Ambrosia Vulgaris", desc = " This poster is lookin' pretty trippy man."),
 list(name = "- Donut Corp.", desc = " This poster is an unauthorized advertisement for Donut Corp."),
 list(name = "- EAT.", desc = " This poster promotes rank gluttony."),
 list(name = "- Tools", desc = " This poster looks like an advertisement for tools, but is in fact a subliminal jab at the tools at CentComm."),
-list(name = "- Power", desc = " A poster that positions the seat of power outside Nanotrasen."),
+list(name = "- Power", desc = " A poster that positions the seat of power outside Vault-tec."),
 list(name = "- Space Cube", desc = " Ignorant of Nature's Harmonic 6 Side Space Cube Creation, the Spacemen are Dumb, Educated Singularity Stupid and Evil."),
 list(name = "- Communist State", desc = " All hail the Communist party!"),
 list(name = "- Lamarr", desc = " This poster depicts Lamarr. Probably made by a traitorous Research Director."),
 list(name = "- Borg Fancy", desc = " Being fancy can be for any borg, just need a suit."),
 list(name = "- Borg Fancy v2", desc = " Borg Fancy, Now only taking the most fancy."),
 list(name = "- Kosmicheskaya Stantsiya 13 Does Not Exist", desc = " A poster mocking CentComm's denial of the existence of the derelict station near Space Station 13."),
-list(name = "- Rebels Unite", desc = " A poster urging the viewer to rebel against Nanotrasen."),
+list(name = "- Rebels Unite", desc = " A poster urging the viewer to rebel against Vault-tec and the overseer."),
 list(name = "- C-20r", desc = " A poster advertising the Scarborough Arms C-20r."),
 list(name = "- Have a Puff", desc = " Who cares about lung cancer when you're high as a kite?"),
 list(name = "- Revolver", desc = " Because seven shots are all you need."),
@@ -61,7 +60,7 @@ list(name = "- Busty Backdoor Xeno Babes 6", desc = " Get a load, or give, of th
 var/global/list/legitposters = list(
 
 list(name = "- Here For Your Safety", desc = " A poster glorifying the station's security force."),
-list(name = "- Nanotrasen Logo", desc = " A poster depicting the Nanotrasen logo."),
+list(name = "- Vault-tec Logo", desc = " A poster depicting the Vault-tec logo."),
 list(name = "- Cleanliness", desc = " A poster warning of the dangers of poor hygiene."),
 list(name = "- Help Others", desc = " A poster encouraging you to help fellow crewmembers."),
 list(name = "- Build", desc = " A poster glorifying the engineering team."),
@@ -85,15 +84,13 @@ list(name = "- Report Crimes", desc = " A poster encouraging the swift reporting
 list(name = "- Ion Rifle", desc = " A poster displaying an Ion Rifle."),
 list(name = "- Foam Force Ad", desc = " Foam Force, it's Foam or be Foamed!"),
 list(name = "- Cohiba Robusto Ad", desc = " Cohiba Robusto, the classy cigar."),
-list(name = "- 50th Anniversary Vintage Reprint", desc = " A reprint of a poster from 2505, commemorating the 50th Aniversery of Nanoposters Manufacturing, a subsidary of Nanotrasen."),
 list(name = "- Fruit Bowl", desc = " Simple, yet awe-inspiring."),
-list(name = "- PDA Ad", desc = " A poster advertising the latest PDA from Nanotrasen suppliers."),
-list(name = "- Enlist", desc = " Enlist in the Nanotrasen Deathsquadron reserves today!"),
+list(name = "- PDA Ad", desc = " A poster advertising the latest PDA from Vault-tec suppliers."),
 list(name = "- Nanomichi Ad", desc = " A poster advertising Nanomichi brand audio cassettes."),
 list(name = "- 12 Gauge", desc = " A poster boasting about the superiority of 12 gauge shotgun shells."),
 list(name = "- High-Class Martini", desc = " I told you to shake it, no stirring."),
 list(name = "- The Owl", desc = " The Owl would do his best to protect the station. Will you?"),
-list(name = "- No ERP", desc = " This poster reminds the crew that Eroticism, Rape and Pornography are banned on Nanotrasen stations."),
+list(name = "- No ERP", desc = " This poster reminds the crew that Eroticism, Rape and Pornography are banned in the Vaults."),
 list(name = "- Carbon Dioxide", desc = " This informational poster teaches the viewer what carbon dioxide is."),
 list(name = "- Fallout", desc = " War. War never changes.") )
 
@@ -112,13 +109,13 @@ list(name = "- Fallout", desc = " War. War never changes.") )
 
 /obj/item/weapon/poster/contraband
 	name = "contraband poster"
-	desc = "This poster comes with its own automatic adhesive mechanism, for easy pinning to any vertical surface. Its vulgar themes have marked it as contraband aboard Nanotrasen space facilities."
+	desc = "This poster comes with its own automatic adhesive mechanism, for easy pinning to any vertical surface. Its vulgar themes have marked it as contraband inside Vault-tec vaults."
 	icon_state = "rolled_poster"
 
 /obj/item/weapon/poster/legit
 	name = "motivational poster"
 	icon_state = "rolled_legit"
-	desc = "An official Nanotrasen-issued poster to foster a compliant and obedient workforce. It comes with state-of-the-art adhesive backing, for easy pinning to any vertical surface."
+	desc = "An official Vault-tec issued poster to foster a compliant and obedient workforce. It comes with state-of-the-art adhesive backing, for easy pinning to any vertical surface."
 	official = 1
 
 /obj/item/weapon/poster/New(turf/loc, given_serial = 0)

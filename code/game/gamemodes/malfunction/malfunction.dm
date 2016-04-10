@@ -272,7 +272,7 @@
 	else if (!station_captured && !malf_dead && !station_was_nuked && crew_evacuated)
 		feedback_set_details("round_end_result","halfwin - evacuated")
 		world << "<FONT size = 3><B>Neutral Victory</B></FONT>"
-		world << "<B>Nanotrasen has lost control of [station_name()]! All surviving personnel will be fired.</B>"
+		world << "<B>Vault-tec has lost control of the Vault!</B>"
 
 	else if (!station_captured && !malf_dead && !station_was_nuked && !crew_evacuated)
 		feedback_set_details("round_end_result","halfwin - interrupted")

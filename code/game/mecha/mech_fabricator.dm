@@ -101,7 +101,7 @@
 			sleep(15)
 			visible_message("\icon[src] <b>\The [src]</b> beeps: \"User DB corrupted \[Code 0x00FA\]. Truncating data structure...\"")
 			sleep(30)
-			visible_message("\icon[src] <b>\The [src]</b> beeps: \"User DB truncated. Please contact your Nanotrasen system operator for future assistance.\"")
+			visible_message("\icon[src] <b>\The [src]</b> beeps: \"User DB truncated. Please contact your Vault system operator for future assistance.\"")
 			req_access = null
 			emagged = 1
 		if(0.5)
