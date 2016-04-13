@@ -63,9 +63,10 @@
 
 /obj/machinery/doorButtons/vaultButton
 	name = "vault access"
-	icon = 'icons/obj/stationobjs.dmi'
-	icon_state = "mass_driver"
+	icon = 'icons/obj/lever.dmi'
+	icon_state = "lever0"
 	anchored = 1
+	density = 1
 
 /obj/machinery/doorButtons/vaultButton/proc/activate()
 	for(var/obj/structure/vaultdoor/vdoor in world)
