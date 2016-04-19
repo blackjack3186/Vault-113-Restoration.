@@ -136,7 +136,7 @@
 	uniform = /obj/item/clothing/under/color/grey
 	id = /obj/item/weapon/card/id
 	ears = /obj/item/device/radio/headset
-	belt = /obj/item/device/pda
+	gloves = /obj/item/clothing/gloves/pda
 	back = /obj/item/weapon/storage/backpack
 	shoes = /obj/item/clothing/shoes/sneakers/black
 
@@ -167,7 +167,7 @@
 		C.update_label()
 		H.sec_hud_set_ID()
 
-	var/obj/item/device/pda/PDA = H.get_item_by_slot(pda_slot)
+	var/obj/item/clothing/gloves/pda/PDA = H.get_item_by_slot(gloves)
 	if(istype(PDA))
 		PDA.owner = H.real_name
 		PDA.ownjob = H.job

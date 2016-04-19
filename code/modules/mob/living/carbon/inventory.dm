@@ -66,6 +66,9 @@
 
 /mob/living/carbon/unEquip(obj/item/I)
 	. = ..() //Sets the default return value to what the parent returns.
+	if (!. && istype(I, /obj/item/clothing/gloves/pda))
+		var/obj/item/clothing/gloves/pda/eqpda = I
+		eqpda.attack_self(src)
 	if(!. || !I) //We don't want to set anything to null if the parent returned 0.
 		return
 

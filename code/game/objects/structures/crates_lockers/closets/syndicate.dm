@@ -41,7 +41,7 @@
 	new /obj/item/weapon/pinpointer/nukeop(src)
 	new /obj/item/weapon/pinpointer/nukeop(src)
 	new /obj/item/weapon/pinpointer/nukeop(src)
-	new /obj/item/device/pda/syndicate(src)
+	new /obj/item/clothing/gloves/pda/syndicate(src)
 	return
 
 /obj/structure/closet/syndicate/resources

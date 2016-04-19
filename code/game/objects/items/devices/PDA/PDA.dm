@@ -1,17 +1,17 @@
 
 //The advanced pea-green monochrome lcd of tomorrow.
 
-var/global/list/obj/item/device/pda/PDAs = list()
+var/global/list/obj/item/clothing/gloves/pda/PDAs = list()
 
 
-/obj/item/device/pda
+/obj/item/clothing/gloves/pda
 	name = "\improper PDA"
 	desc = "A portable microcomputer by Thinktronic Systems, LTD. Functionality determined by a preprogrammed ROM cartridge."
 	icon = 'icons/obj/pda.dmi'
 	icon_state = "pda"
-	item_state = "electronic"
+	item_state = "Pip-boy"
 	w_class = 1
-	slot_flags = SLOT_ID | SLOT_BELT
+	//slot_flags = SLOT_ID | SLOT_BELT
 	origin_tech = "programming=2"
 
 	//Main variables
@@ -41,125 +41,126 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	var/detonate = 1 // Can the PDA be blown up?
 	var/hidden = 0 // Is the PDA hidden from the PDA list?
 	var/emped = 0
+	var/locked_on_hand = 1 //when 1, you can't take it off the hand
 
 	var/obj/item/weapon/card/id/id = null //Making it possible to slot an ID card into the PDA so it can function as both.
 	var/ownjob = null //related to above
 
-	var/obj/item/device/paicard/pai = null	// A slot for a personal AI device
+	var/obj/item/clothing/gloves/paicard/pai = null	// A slot for a personal AI device
 
 	var/image/photo = null //Scanned photo
 
-/obj/item/device/pda/medical
+/obj/item/clothing/gloves/pda/medical
 	default_cartridge = /obj/item/weapon/cartridge/medical
 	icon_state = "pda-medical"
 
-/obj/item/device/pda/viro
+/obj/item/clothing/gloves/pda/viro
 	default_cartridge = /obj/item/weapon/cartridge/medical
 	icon_state = "pda-virology"
 
-/obj/item/device/pda/engineering
+/obj/item/clothing/gloves/pda/engineering
 	default_cartridge = /obj/item/weapon/cartridge/engineering
 	icon_state = "pda-engineer"
 
-/obj/item/device/pda/security
+/obj/item/clothing/gloves/pda/security
 	default_cartridge = /obj/item/weapon/cartridge/security
 	icon_state = "pda-security"
 
-/obj/item/device/pda/detective
+/obj/item/clothing/gloves/pda/detective
 	default_cartridge = /obj/item/weapon/cartridge/detective
 	icon_state = "pda-detective"
 
-/obj/item/device/pda/warden
+/obj/item/clothing/gloves/pda/warden
 	default_cartridge = /obj/item/weapon/cartridge/security
 	icon_state = "pda-warden"
 
-/obj/item/device/pda/janitor
+/obj/item/clothing/gloves/pda/janitor
 	default_cartridge = /obj/item/weapon/cartridge/janitor
 	icon_state = "pda-janitor"
 	ttone = "slip"
 
-/obj/item/device/pda/toxins
+/obj/item/clothing/gloves/pda/toxins
 	default_cartridge = /obj/item/weapon/cartridge/signal/toxins
 	icon_state = "pda-science"
 	ttone = "boom"
 
-/obj/item/device/pda/clown
+/obj/item/clothing/gloves/pda/clown
 	default_cartridge = /obj/item/weapon/cartridge/clown
 	icon_state = "pda-clown"
 	desc = "A portable microcomputer by Thinktronic Systems, LTD. The surface is coated with polytetrafluoroethylene and banana drippings."
 	ttone = "honk"
 
-/obj/item/device/pda/mime
+/obj/item/clothing/gloves/pda/mime
 	default_cartridge = /obj/item/weapon/cartridge/mime
 	icon_state = "pda-mime"
 	silent = 1
 	ttone = "silence"
 
-/obj/item/device/pda/heads
+/obj/item/clothing/gloves/pda/heads
 	default_cartridge = /obj/item/weapon/cartridge/head
 	icon_state = "pda-hop"
 
-/obj/item/device/pda/heads/hop
+/obj/item/clothing/gloves/pda/heads/hop
 	default_cartridge = /obj/item/weapon/cartridge/hop
 	icon_state = "pda-hop"
 
-/obj/item/device/pda/heads/hos
+/obj/item/clothing/gloves/pda/heads/hos
 	default_cartridge = /obj/item/weapon/cartridge/hos
 	icon_state = "pda-hos"
 
-/obj/item/device/pda/heads/ce
+/obj/item/clothing/gloves/pda/heads/ce
 	default_cartridge = /obj/item/weapon/cartridge/ce
 	icon_state = "pda-ce"
 
-/obj/item/device/pda/heads/cmo
+/obj/item/clothing/gloves/pda/heads/cmo
 	default_cartridge = /obj/item/weapon/cartridge/cmo
 	icon_state = "pda-cmo"
 
-/obj/item/device/pda/heads/rd
+/obj/item/clothing/gloves/pda/heads/rd
 	default_cartridge = /obj/item/weapon/cartridge/rd
 	icon_state = "pda-rd"
 
-/obj/item/device/pda/captain
+/obj/item/clothing/gloves/pda/captain
 	default_cartridge = /obj/item/weapon/cartridge/captain
 	icon_state = "pda-captain"
 	detonate = 0
 
-/obj/item/device/pda/cargo
+/obj/item/clothing/gloves/pda/cargo
 	default_cartridge = /obj/item/weapon/cartridge/quartermaster
 	icon_state = "pda-cargo"
 
-/obj/item/device/pda/quartermaster
+/obj/item/clothing/gloves/pda/quartermaster
 	default_cartridge = /obj/item/weapon/cartridge/quartermaster
 	icon_state = "pda-qm"
 
-/obj/item/device/pda/shaftminer
+/obj/item/clothing/gloves/pda/shaftminer
 	icon_state = "pda-miner"
 
-/obj/item/device/pda/syndicate
+/obj/item/clothing/gloves/pda/syndicate
 	default_cartridge = /obj/item/weapon/cartridge/syndicate
 	icon_state = "pda-syndi"
 	name = "military PDA"
 	owner = "John Doe"
 	hidden = 1
 
-/obj/item/device/pda/chaplain
+/obj/item/clothing/gloves/pda/chaplain
 	icon_state = "pda-chaplain"
 	ttone = "holy"
 
-/obj/item/device/pda/lawyer
+/obj/item/clothing/gloves/pda/lawyer
 	default_cartridge = /obj/item/weapon/cartridge/lawyer
 	icon_state = "pda-lawyer"
 	ttone = "objection"
 
-/obj/item/device/pda/botanist
+/obj/item/clothing/gloves/pda/botanist
 	//default_cartridge = /obj/item/weapon/cartridge/botanist
 	icon_state = "pda-hydro"
 
-/obj/item/device/pda/roboticist
+/obj/item/clothing/gloves/pda/roboticist
 	icon_state = "pda-roboticist"
 	default_cartridge = /obj/item/weapon/cartridge/roboticist
 
-/obj/item/device/pda/librarian
+/obj/item/clothing/gloves/pda/librarian
 	icon_state = "pda-library"
 	icon_alert = "pda-r-library"
 	default_cartridge = /obj/item/weapon/cartridge/librarian
@@ -167,59 +168,59 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	note = "Congratulations, your station has chosen the Thinktronic 5290 WGW-11 Series E-reader and Personal Data Assistant!"
 	silent = 1 //Quiet in the library!
 
-/obj/item/device/pda/clear
+/obj/item/clothing/gloves/pda/clear
 	icon_state = "pda-clear"
 	desc = "A portable microcomputer by Thinktronic Systems, LTD. This is model is a special edition with a transparent case."
 	note = "Congratulations, you have chosen the Thinktronic 5230 Personal Data Assistant Deluxe Special Max Turbo Limited Edition!"
 
-/obj/item/device/pda/cook
+/obj/item/clothing/gloves/pda/cook
 	icon_state = "pda-cook"
 
-/obj/item/device/pda/bar
+/obj/item/clothing/gloves/pda/bar
 	icon_state = "pda-bartender"
 
-/obj/item/device/pda/atmos
+/obj/item/clothing/gloves/pda/atmos
 	default_cartridge = /obj/item/weapon/cartridge/atmos
 	icon_state = "pda-atmos"
 
-/obj/item/device/pda/chemist
+/obj/item/clothing/gloves/pda/chemist
 	default_cartridge = /obj/item/weapon/cartridge/chemistry
 	icon_state = "pda-chemistry"
 
-/obj/item/device/pda/geneticist
+/obj/item/clothing/gloves/pda/geneticist
 	default_cartridge = /obj/item/weapon/cartridge/medical
 	icon_state = "pda-genetics"
 
 // Special AI/pAI PDAs that cannot explode.
-/obj/item/device/pda/ai
+/obj/item/clothing/gloves/pda/ai
 	icon_state = "NONE"
 	ttone = "data"
 	fon = 0
 	detonate = 0
 
-/obj/item/device/pda/ai/attack_self(mob/user)
+/obj/item/clothing/gloves/pda/ai/attack_self(mob/user)
 	if ((honkamt > 0) && (prob(60)))//For clown virus.
 		honkamt--
 		playsound(loc, 'sound/items/bikehorn.ogg', 30, 1)
 	return
 
-/obj/item/device/pda/ai/pai
+/obj/item/clothing/gloves/pda/ai/pai
 	ttone = "assist"
 
 /*
  *	The Actual PDA
  */
-/obj/item/device/pda/pickup(mob/user)
+/obj/item/clothing/gloves/pda/pickup(mob/user)
 	if(fon)
 		SetLuminosity(0)
 		user.AddLuminosity(f_lum)
 
-/obj/item/device/pda/dropped(mob/user)
+/obj/item/clothing/gloves/pda/dropped(mob/user)
 	if(fon)
 		user.AddLuminosity(-f_lum)
 		SetLuminosity(f_lum)
 
-/obj/item/device/pda/New()
+/obj/item/clothing/gloves/pda/New()
 	..()
 	if(fon)
 		if(!isturf(loc))
@@ -232,25 +233,25 @@ var/global/list/obj/item/device/pda/PDAs = list()
 		cartridge = new default_cartridge(src)
 	new /obj/item/weapon/pen(src)
 
-/obj/item/device/pda/proc/update_label()
+/obj/item/clothing/gloves/pda/proc/update_label()
 	name = "PDA-[owner] ([ownjob])" //Name generalisation
 
-/obj/item/device/pda/GetAccess()
+/obj/item/clothing/gloves/pda/GetAccess()
 	if(id)
 		return id.GetAccess()
 	else
 		return ..()
 
-/obj/item/device/pda/GetID()
+/obj/item/clothing/gloves/pda/GetID()
 	return id
 
-/obj/item/device/pda/MouseDrop(obj/over_object, src_location, over_location)
+/obj/item/clothing/gloves/pda/MouseDrop(obj/over_object, src_location, over_location)
 	var/mob/M = usr
 	if((!istype(over_object, /obj/screen)) && usr.canUseTopic(src))
 		return attack_self(M)
 	return
 
-/obj/item/device/pda/attack_self(mob/user)
+/obj/item/clothing/gloves/pda/attack_self(mob/user)
 	var/datum/asset/assets = get_asset_datum(/datum/asset/simple/pda)
 	assets.send(user)
 
@@ -345,12 +346,14 @@ var/global/list/obj/item/device/pda/PDAs = list()
 						dat += "<li><a href='byond://?src=\ref[src];choice=Toggle Door'><img src=pda_rdoor.png> Toggle Remote Door</a></li>"
 				dat += "<li><a href='byond://?src=\ref[src];choice=3'><img src=pda_atmos.png> Atmospheric Scan</a></li>"
 				dat += "<li><a href='byond://?src=\ref[src];choice=Light'><img src=pda_flashlight.png> [fon ? "Disable" : "Enable"] Flashlight</a></li>"
-				if (pai)
+				//todo: make not glove pda for robotic stuff?
+				/*if (pai)
 					if(pai.loc != src)
 						pai = null
 					else
 						dat += "<li><a href='byond://?src=\ref[src];choice=pai;option=1'>pAI Device Configuration</a></li>"
 						dat += "<li><a href='byond://?src=\ref[src];choice=pai;option=2'>Eject pAI Device</a></li>"
+				*/
 				dat += "</ul>"
 
 			if (1)
@@ -380,7 +383,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 				var/count = 0
 
 				if (!toff)
-					for (var/obj/item/device/pda/P in sortNames(get_viewable_pdas()))
+					for (var/obj/item/clothing/gloves/pda/P in sortNames(get_viewable_pdas()))
 						if (P == src)	continue
 						dat += "<li><a href='byond://?src=\ref[src];choice=Message;target=\ref[P]'>[P]</a>"
 						if (istype(cartridge, /obj/item/weapon/cartridge/syndicate) && P.detonate)
@@ -442,7 +445,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	user << browse(dat, "window=pda;size=400x444;border=1;can_resize=1;can_close=0;can_minimize=0")
 	onclose(user, "pda", src)
 
-/obj/item/device/pda/Topic(href, href_list)
+/obj/item/clothing/gloves/pda/Topic(href, href_list)
 	..()
 	var/mob/living/U = usr
 	//Looking for master was kind of pointless since PDAs don't appear to have one.
@@ -578,7 +581,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 					U << browse(null, "window=pda")
 					return
 			if("Message")
-				var/obj/item/device/pda/P = locate(href_list["target"])
+				var/obj/item/clothing/gloves/pda/P = locate(href_list["target"])
 				src.create_message(U, P)
 
 			if("MessageAll")
@@ -586,7 +589,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 
 			if("Send Honk")//Honk virus
 				if(istype(cartridge, /obj/item/weapon/cartridge/clown))//Cartridge checks are kind of unnecessary since everything is done through switch.
-					var/obj/item/device/pda/P = locate(href_list["target"])//Leaving it alone in case it may do something useful, I guess.
+					var/obj/item/clothing/gloves/pda/P = locate(href_list["target"])//Leaving it alone in case it may do something useful, I guess.
 					if(!isnull(P))
 						if (!P.toff && cartridge:honk_charges > 0)
 							cartridge:honk_charges--
@@ -599,7 +602,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 					return
 			if("Send Silence")//Silent virus
 				if(istype(cartridge, /obj/item/weapon/cartridge/mime))
-					var/obj/item/device/pda/P = locate(href_list["target"])
+					var/obj/item/clothing/gloves/pda/P = locate(href_list["target"])
 					if(!isnull(P))
 						if (!P.toff && cartridge:mime_charges > 0)
 							cartridge:mime_charges--
@@ -625,7 +628,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 
 			if("Detonate")//Detonate PDA
 				if(istype(cartridge, /obj/item/weapon/cartridge/syndicate))
-					var/obj/item/device/pda/P = locate(href_list["target"])
+					var/obj/item/clothing/gloves/pda/P = locate(href_list["target"])
 					if(!isnull(P))
 						if (!P.toff && cartridge:shock_charges > 0)
 							cartridge:shock_charges--
@@ -655,14 +658,14 @@ var/global/list/obj/item/device/pda/PDAs = list()
 					return
 
 //pAI FUNCTIONS===================================
-			if("pai")
+			/*if("pai")
 				switch(href_list["option"])
 					if("1")		// Configure pAI device
 						pai.attack_self(U)
 					if("2")		// Eject pAI device
 						var/turf/T = get_turf(src.loc)
 						if(T)
-							pai.loc = T
+							pai.loc = T*/
 
 //LINK FUNCTIONS===================================
 
@@ -692,7 +695,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 		U << browse(null, "window=pda")
 	return
 
-/obj/item/device/pda/proc/remove_id()
+/obj/item/clothing/gloves/pda/proc/remove_id()
 	if (id)
 		if (ismob(loc))
 			var/mob/M = loc
@@ -702,7 +705,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 			id.loc = get_turf(src)
 		id = null
 
-/obj/item/device/pda/proc/msg_input(mob/living/U = usr)
+/obj/item/clothing/gloves/pda/proc/msg_input(mob/living/U = usr)
 	var/t = stripped_input(U, "Please enter message", name, null, MAX_MESSAGE_LEN)
 	if (!t || toff)
 		return
@@ -714,7 +717,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 		t = Gibberish(t, 100)
 	return t
 
-/obj/item/device/pda/proc/send_message(mob/living/user = usr,list/obj/item/device/pda/targets)
+/obj/item/clothing/gloves/pda/proc/send_message(mob/living/user = usr,list/obj/item/clothing/gloves/pda/targets)
 	var/message = msg_input(user)
 
 	if(!message || !targets.len)
@@ -726,7 +729,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	var/multiple = targets.len > 1
 
 	var/datum/data_pda_msg/last_sucessful_msg
-	for(var/obj/item/device/pda/P in targets)
+	for(var/obj/item/clothing/gloves/pda/P in targets)
 		if(P == src)
 			continue
 		var/obj/machinery/message_server/MS = null
@@ -752,10 +755,10 @@ var/global/list/obj/item/device/pda/PDAs = list()
 		show_to_ghosts(user,last_sucessful_msg,1)
 		log_pda("[user] (PDA: [src.name]) sent \"[message]\" to Everyone")
 
-/obj/item/device/pda/proc/show_to_sender(datum/data_pda_msg/msg,multiple = 0)
+/obj/item/clothing/gloves/pda/proc/show_to_sender(datum/data_pda_msg/msg,multiple = 0)
 	tnote += "<i><b>&rarr; To [multiple ? "Everyone" : msg.recipient]:</b></i><br>[msg.message][msg.get_photo_ref()]<br>"
 
-/obj/item/device/pda/proc/show_recieved_message(datum/data_pda_msg/msg,obj/item/device/pda/source)
+/obj/item/clothing/gloves/pda/proc/show_recieved_message(datum/data_pda_msg/msg,obj/item/clothing/gloves/pda/source)
 	tnote += "<i><b>&larr; From <a href='byond://?src=\ref[src];choice=Message;target=\ref[source]'>[source.owner]</a> ([source.ownjob]):</b></i><br>[msg.message][msg.get_photo_ref()]<br>"
 
 	if (!silent)
@@ -775,12 +778,12 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	overlays.Cut()
 	overlays += image(icon, icon_alert)
 
-/obj/item/device/pda/proc/show_to_ghosts(mob/living/user, datum/data_pda_msg/msg,multiple = 0)
+/obj/item/clothing/gloves/pda/proc/show_to_ghosts(mob/living/user, datum/data_pda_msg/msg,multiple = 0)
 	for(var/mob/M in player_list)
 		if(isobserver(M) && M.client && (M.client.prefs.chat_toggles & CHAT_GHOSTPDA))
 			M.show_message("<a href=?src=\ref[M];follow=\ref[user]>(F)</a>[msg.sender]<span class='game say'>PDA Message - </span> -> <span class='name'>[multiple ? "Everyone" : msg.recipient]</span>: <span class='message'>[msg.message][msg.get_photo_ref()]</span></span>")
 
-/obj/item/device/pda/proc/can_send(obj/item/device/pda/P)
+/obj/item/clothing/gloves/pda/proc/can_send(obj/item/clothing/gloves/pda/P)
 	if(!P || qdeleted(P) || P.toff)
 		return null
 
@@ -811,13 +814,13 @@ var/global/list/obj/item/device/pda/PDAs = list()
 		return null
 
 
-/obj/item/device/pda/proc/send_to_all(mob/living/U = usr)
+/obj/item/clothing/gloves/pda/proc/send_to_all(mob/living/U = usr)
 	send_message(U,get_viewable_pdas())
 
-/obj/item/device/pda/proc/create_message(mob/living/U = usr, obj/item/device/pda/P)
+/obj/item/clothing/gloves/pda/proc/create_message(mob/living/U = usr, obj/item/clothing/gloves/pda/P)
 	send_message(U,list(P))
 
-/obj/item/device/pda/AltClick()
+/obj/item/clothing/gloves/pda/AltClick()
 	..()
 
 	if(issilicon(usr))
@@ -829,7 +832,19 @@ var/global/list/obj/item/device/pda/PDAs = list()
 		else
 			usr << "<span class='warning'>This PDA does not have an ID in it!</span>"
 
-/obj/item/device/pda/verb/verb_remove_id()
+/obj/item/clothing/gloves/pda/verb/toggle_lock()
+	set category = "Object"
+	set name = "Toggle lock"
+	set src in usr
+	if(issilicon(usr))
+		return
+	locked_on_hand = 1 - locked_on_hand;
+	if (locked_on_hand)
+		flags |= NODROP
+	else
+		flags &= ~NODROP
+
+/obj/item/clothing/gloves/pda/verb/verb_remove_id()
 	set category = "Object"
 	set name = "Eject ID"
 	set src in usr
@@ -843,7 +858,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 		else
 			usr << "<span class='warning'>This PDA does not have an ID in it!</span>"
 
-/obj/item/device/pda/verb/verb_remove_pen()
+/obj/item/clothing/gloves/pda/verb/verb_remove_pen()
 	set category = "Object"
 	set name = "Remove Pen"
 	set src in usr
@@ -864,7 +879,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 		else
 			usr << "<span class='warning'>This PDA does not have a pen in it!</span>"
 
-/obj/item/device/pda/proc/id_check(mob/user, choice as num)//To check for IDs; 1 for in-pda use, 2 for out of pda use.
+/obj/item/clothing/gloves/pda/proc/id_check(mob/user, choice as num)//To check for IDs; 1 for in-pda use, 2 for out of pda use.
 	if(choice == 1)
 		if (id)
 			remove_id()
@@ -887,7 +902,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	return 1
 
 // access to status display signals
-/obj/item/device/pda/attackby(obj/item/C, mob/user, params)
+/obj/item/clothing/gloves/pda/attackby(obj/item/C, mob/user, params)
 	..()
 	if(istype(C, /obj/item/weapon/cartridge) && !cartridge)
 		cartridge = C
@@ -917,13 +932,13 @@ var/global/list/obj/item/device/pda/PDAs = list()
 				updateSelfDialog()//Update self dialog on success.
 			return	//Return in case of failed check or when successful.
 		updateSelfDialog()//For the non-input related code.
-	else if(istype(C, /obj/item/device/paicard) && !src.pai)
+	/*else if(istype(C, /obj/item/clothing/gloves/paicard) && !src.pai)
 		if(!user.unEquip(C))
 			return
 		C.loc = src
 		pai = C
 		user << "<span class='notice'>You slot \the [C] into [src].</span>"
-		updateUsrDialog()
+		updateUsrDialog()*/
 	else if(istype(C, /obj/item/weapon/pen))
 		var/obj/item/weapon/pen/O = locate() in src
 		if(O)
@@ -939,7 +954,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 		user << "<span class='notice'>You scan \the [C].</span>"
 	return
 
-/obj/item/device/pda/attack(mob/living/carbon/C, mob/living/user)
+/obj/item/clothing/gloves/pda/attack(mob/living/carbon/C, mob/living/user)
 	if(istype(C))
 		switch(scanmode)
 
@@ -960,7 +975,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 				else
 					user.show_message("<span class='notice'>No radiation detected.</span>")
 
-/obj/item/device/pda/afterattack(atom/A as mob|obj|turf|area, mob/user, proximity)
+/obj/item/clothing/gloves/pda/afterattack(atom/A as mob|obj|turf|area, mob/user, proximity)
 	if(!proximity) return
 	switch(scanmode)
 
@@ -1007,7 +1022,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 		user << "<span class='notice'>Paper scanned. Saved to PDA's notekeeper.</span>" //concept of scanning paper copyright brainoblivion 2009
 
 
-/obj/item/device/pda/proc/explode() //This needs tuning.
+/obj/item/clothing/gloves/pda/proc/explode() //This needs tuning.
 	if(!src.detonate) return
 	var/turf/T = get_turf(src.loc)
 
@@ -1023,11 +1038,11 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	qdel(src)
 	return
 
-/obj/item/device/pda/Destroy()
+/obj/item/clothing/gloves/pda/Destroy()
 	PDAs -= src
 	return ..()
 
-/obj/item/device/pda/clown/Crossed(AM as mob|obj) //Clown PDA is slippery.
+/obj/item/clothing/gloves/pda/clown/Crossed(AM as mob|obj) //Clown PDA is slippery.
 	if (istype(AM, /mob/living/carbon))
 		var/mob/living/carbon/M = AM
 		if(M.slip(8, 5, src, NO_SLIP_WHEN_WALKING))
@@ -1051,7 +1066,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 		user << "Turn on your receiver in order to send messages."
 		return
 
-	for (var/obj/item/device/pda/P in get_viewable_pdas())
+	for (var/obj/item/clothing/gloves/pda/P in get_viewable_pdas())
 		if (P == src)
 			continue
 		else if (P == src.aiPDA)
@@ -1123,10 +1138,10 @@ var/global/list/obj/item/device/pda/PDAs = list()
 
 /obj/item/weapon/storage/box/PDAs/New()
 	..()
-	new /obj/item/device/pda(src)
-	new /obj/item/device/pda(src)
-	new /obj/item/device/pda(src)
-	new /obj/item/device/pda(src)
+	new /obj/item/clothing/gloves/pda(src)
+	new /obj/item/clothing/gloves/pda(src)
+	new /obj/item/clothing/gloves/pda(src)
+	new /obj/item/clothing/gloves/pda(src)
 	new /obj/item/weapon/cartridge/head(src)
 
 	var/newcart = pick(	/obj/item/weapon/cartridge/engineering,
@@ -1137,7 +1152,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	new newcart(src)
 
 // Pass along the pulse to atoms in contents, largely added so pAIs are vulnerable to EMP
-/obj/item/device/pda/emp_act(severity)
+/obj/item/clothing/gloves/pda/emp_act(severity)
 	for(var/atom/A in src)
 		A.emp_act(severity)
 	emped += 1
@@ -1147,7 +1162,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 /proc/get_viewable_pdas()
 	. = list()
 	// Returns a list of PDAs which can be viewed from another PDA/message monitor.
-	for(var/obj/item/device/pda/P in PDAs)
+	for(var/obj/item/clothing/gloves/pda/P in PDAs)
 		if(!P.owner || P.toff || P.hidden) continue
 		. += P
 	return .

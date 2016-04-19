@@ -35,12 +35,12 @@ Head of Security
 	name = "Head of Security"
 
 	id = /obj/item/weapon/card/id/silver
-	belt = /obj/item/device/pda/heads/hos
+	gloves = /obj/item/clothing/gloves/pda/heads/hos
 	ears = /obj/item/device/radio/headset/heads/hos/alt
 	uniform = /obj/item/clothing/under/rank/head_of_security
 	shoes = /obj/item/clothing/shoes/jackboots
 	suit = /obj/item/clothing/suit/armor/hos/trenchcoat
-	gloves = /obj/item/clothing/gloves/color/black/hos
+	//gloves = /obj/item/clothing/gloves/color/black/hos
 	head = /obj/item/clothing/head/HoS/beret
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	suit_store = /obj/item/weapon/gun/energy/gun
@@ -90,12 +90,12 @@ Warden
 /datum/outfit/job/warden
 	name = "Warden"
 
-	belt = /obj/item/device/pda/warden
+	gloves = /obj/item/clothing/gloves/pda/warden
 	ears = /obj/item/device/radio/headset/headset_sec/alt
 	uniform = /obj/item/clothing/under/rank/warden
 	shoes = /obj/item/clothing/shoes/jackboots
 	suit = /obj/item/clothing/suit/armor/vest/warden
-	gloves = /obj/item/clothing/gloves/color/black
+	//gloves = /obj/item/clothing/gloves/color/black
 	head = /obj/item/clothing/head/warden
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	l_pocket = /obj/item/device/assembly/flash/handheld
@@ -139,12 +139,12 @@ Detective
 /datum/outfit/job/detective
 	name = "Detective"
 
-	belt = /obj/item/device/pda/detective
+	gloves = /obj/item/clothing/gloves/pda/detective
 	ears = /obj/item/device/radio/headset/headset_sec
 	uniform = /obj/item/clothing/under/rank/det
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	suit = /obj/item/clothing/suit/det_suit
-	gloves = /obj/item/clothing/gloves/color/black
+	//gloves = /obj/item/clothing/gloves/color/black
 	head = /obj/item/clothing/head/det_hat
 	l_pocket = /obj/item/toy/crayon/white
 	r_pocket = /obj/item/weapon/lighter
@@ -196,10 +196,10 @@ var/list/sec_departments = list("engineering", "supply", "medical", "science")
 /datum/outfit/job/security
 	name = "Security Officer"
 
-	belt = /obj/item/device/pda/security
+	gloves = /obj/item/clothing/gloves/pda/security
 	ears = /obj/item/device/radio/headset/headset_sec/alt
 	uniform = /obj/item/clothing/under/rank/security
-	gloves = /obj/item/clothing/gloves/color/black
+	//gloves = /obj/item/clothing/gloves/color/black
 	head = /obj/item/clothing/head/helmet/sec
 	suit = /obj/item/clothing/suit/armor/vest
 	shoes = /obj/item/clothing/shoes/jackboots

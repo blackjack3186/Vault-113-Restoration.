@@ -241,7 +241,7 @@
 			anchored = 0
 
 
-	else if(istype(W, /obj/item/weapon/card/id) || istype(W, /obj/item/device/pda))
+	else if(istype(W, /obj/item/weapon/card/id) || istype(W, /obj/item/clothing/gloves/pda))
 		if(src.allowed(user))
 			src.locked = !src.locked
 			user << "<span class='notice'>You [src.locked ? "lock" : "unlock"] the controls.</span>"
@@ -435,7 +435,7 @@
 			anchored = 0
 			return
 
-	if(istype(W, /obj/item/weapon/card/id)||istype(W, /obj/item/device/pda))
+	if(istype(W, /obj/item/weapon/card/id)||istype(W, /obj/item/clothing/gloves/pda))
 		if (src.allowed(user))
 			src.locked = !src.locked
 			user << "<span class='notice'>You [src.locked ? "lock" : "unlock"] the controls.</span>"

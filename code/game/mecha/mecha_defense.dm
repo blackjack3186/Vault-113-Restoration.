@@ -202,14 +202,14 @@
 			else
 				user << "<span class='warning'>You were unable to attach [W] to [src]!</span>"
 		return
-	if(istype(W, /obj/item/weapon/card/id)||istype(W, /obj/item/device/pda))
+	if(istype(W, /obj/item/weapon/card/id)||istype(W, /obj/item/clothing/gloves/pda))
 		if(add_req_access || maint_access)
 			if(internals_access_allowed(user))
 				var/obj/item/weapon/card/id/id_card
 				if(istype(W, /obj/item/weapon/card/id))
 					id_card = W
 				else
-					var/obj/item/device/pda/pda = W
+					var/obj/item/clothing/gloves/pda/pda = W
 					id_card = pda.id
 				output_maintenance_dialog(id_card, user)
 				return
