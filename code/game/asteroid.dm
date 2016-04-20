@@ -112,7 +112,7 @@ var/global/max_secret_rooms = 6
 								/obj/machinery/biogenerator=1)
 			fluffitems = list(/obj/structure/table/reinforced=2,/obj/item/weapon/stock_parts/scanning_module/phasic=3,
 							  /obj/item/weapon/stock_parts/matter_bin/super=3,/obj/item/weapon/stock_parts/manipulator/pico=3,
-							  /obj/item/weapon/stock_parts/capacitor/super=3,/obj/item/device/pda/clear=1, /obj/structure/mecha_wreckage/phazon=1)
+							  /obj/item/weapon/stock_parts/capacitor/super=3,/obj/item/clothing/gloves/pda/clear=1, /obj/structure/mecha_wreckage/phazon=1)
 
 		if("speakeasy")
 			theme = "speakeasy"

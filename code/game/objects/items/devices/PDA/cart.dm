@@ -231,7 +231,7 @@
 	var/shock_charges = 4
 
 /obj/item/weapon/cartridge/proc/unlock()
-	if (!istype(loc, /obj/item/device/pda))
+	if (!istype(loc, /obj/item/clothing/gloves/pda))
 		return
 
 	generate_menu()
@@ -239,7 +239,7 @@
 	return
 
 /obj/item/weapon/cartridge/proc/print_to_host(text)
-	if (!istype(loc, /obj/item/device/pda))
+	if (!istype(loc, /obj/item/clothing/gloves/pda))
 		return
 	loc:cart = text
 
@@ -604,7 +604,7 @@ Code:
 		usr << browse(null, "window=pda")
 		return
 
-	var/obj/item/device/pda/pda = loc
+	var/obj/item/clothing/gloves/pda/pda = loc
 
 	switch(href_list["choice"])
 		if("Medical Records")

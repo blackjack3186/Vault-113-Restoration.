@@ -59,7 +59,7 @@
 	text_dehack_fail = "[name] does not seem to respond to your repair code!"
 
 /mob/living/simple_animal/bot/cleanbot/attackby(obj/item/weapon/W, mob/user, params)
-	if (istype(W, /obj/item/weapon/card/id)||istype(W, /obj/item/device/pda))
+	if (istype(W, /obj/item/weapon/card/id)||istype(W, /obj/item/clothing/gloves/pda))
 		if(bot_core.allowed(user) && !open && !emagged)
 			locked = !locked
 			user << "<span class='notice'>You [ locked ? "lock" : "unlock"] \the [src] behaviour controls.</span>"

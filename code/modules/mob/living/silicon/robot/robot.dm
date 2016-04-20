@@ -538,7 +538,7 @@
 		else
 			user << "<span class='warning'>Unable to locate a radio!</span>"
 
-	else if (istype(W, /obj/item/weapon/card/id)||istype(W, /obj/item/device/pda))			// trying to unlock the interface with an ID card
+	else if (istype(W, /obj/item/weapon/card/id)||istype(W, /obj/item/clothing/gloves/pda))			// trying to unlock the interface with an ID card
 		if(emagged)//still allow them to open the cover
 			user << "<span class='notice'>The interface seems slightly damaged.</span>"
 		if(opened)

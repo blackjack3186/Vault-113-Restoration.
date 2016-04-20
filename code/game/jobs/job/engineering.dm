@@ -29,13 +29,13 @@ Chief Engineer
 	name = "Chief Engineer"
 
 	id = /obj/item/weapon/card/id/silver
-	belt = /obj/item/weapon/storage/belt/utility/full
-	l_pocket = /obj/item/device/pda/heads/ce
+	gloves = /obj/item/weapon/storage/belt/utility/full
+	l_pocket = /obj/item/clothing/gloves/pda/heads/ce
 	ears = /obj/item/device/radio/headset/heads/ce
 	uniform = /obj/item/clothing/under/rank/chief_engineer
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	head = /obj/item/clothing/head/hardhat/white
-	gloves = /obj/item/clothing/gloves/color/black/ce
+	//gloves = /obj/item/clothing/gloves/color/black/ce
 	backpack_contents = list(/obj/item/weapon/melee/classic_baton/telescopic=1)
 
 	backpack = /obj/item/weapon/storage/backpack/industrial
@@ -75,8 +75,8 @@ Station Engineer
 /datum/outfit/job/engineer
 	name = "Station Engineer"
 
-	belt = /obj/item/weapon/storage/belt/utility/full
-	l_pocket = /obj/item/device/pda/engineering
+	gloves = /obj/item/weapon/storage/belt/utility/full
+	l_pocket = /obj/item/clothing/gloves/pda/engineering
 	ears = /obj/item/device/radio/headset/headset_eng
 	uniform = /obj/item/clothing/under/rank/engineer
 	shoes = /obj/item/clothing/shoes/workboots
@@ -112,7 +112,7 @@ Atmospheric Technician
 	name = "Atmospheric Technician"
 
 	belt = /obj/item/weapon/storage/belt/utility/atmostech
-	l_pocket = /obj/item/device/pda/atmos
+	l_pocket = /obj/item/clothing/gloves/pda/atmos
 	ears = /obj/item/device/radio/headset/headset_eng
 	uniform = /obj/item/clothing/under/rank/atmospheric_technician
 	r_pocket = /obj/item/device/analyzer

@@ -157,7 +157,7 @@
 	l_pocket = /obj/item/weapon/melee/energy/sword/saber
 	l_hand = /obj/item/weapon/storage/secure/briefcase
 	id = /obj/item/weapon/card/id/syndicate
-	belt = /obj/item/device/pda/heads
+	belt = /obj/item/clothing/gloves/pda/heads
 
 /datum/outfit/assassin/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	var/obj/item/clothing/under/U = H.w_uniform
@@ -177,7 +177,7 @@
 	sec_briefcase.handle_item_insertion(new /obj/item/ammo_box/m44,1)
 	sec_briefcase.handle_item_insertion(new /obj/item/weapon/c4,1)
 
-	var/obj/item/device/pda/heads/pda = H.belt
+	var/obj/item/clothing/gloves/pda/heads/pda = H.belt
 	pda.owner = H.real_name
 	pda.ownjob = "Reaper"
 	pda.update_label()

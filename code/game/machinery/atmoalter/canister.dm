@@ -242,7 +242,7 @@ update_flag
 	return
 
 /obj/machinery/portable_atmospherics/canister/attackby(obj/item/weapon/W, mob/user, params)
-	if(!istype(W, /obj/item/weapon/wrench) && !istype(W, /obj/item/weapon/tank) && !istype(W, /obj/item/device/analyzer) && !istype(W, /obj/item/device/pda))
+	if(!istype(W, /obj/item/weapon/wrench) && !istype(W, /obj/item/weapon/tank) && !istype(W, /obj/item/device/analyzer) && !istype(W, /obj/item/clothing/gloves/pda))
 		investigate_log("was smacked with \a [W] by [key_name(user)]", "atmos")
 		health -= W.force
 		add_fingerprint(user)

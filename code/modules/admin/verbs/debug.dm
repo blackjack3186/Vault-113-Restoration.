@@ -405,7 +405,7 @@ var/global/list/g_fancy_list_of_types = null
 			id.update_label()
 
 			if(worn)
-				if(istype(worn,/obj/item/device/pda))
+				if(istype(worn,/obj/item/clothing/gloves/pda))
 					worn:id = id
 					id.loc = worn
 				else if(istype(worn,/obj/item/weapon/storage/wallet))

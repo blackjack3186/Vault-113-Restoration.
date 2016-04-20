@@ -43,7 +43,7 @@
 	var/update_hands = 0
 	//Job and mind data
 	var/obj/item/weapon/card/id/MYID
-	var/obj/item/device/pda/MYPDA
+	var/obj/item/clothing/gloves/pda/MYPDA
 	var/obj/item/main_hand
 	var/obj/item/other_hand
 	var/TRAITS = 0

@@ -183,10 +183,10 @@
 				user << "[msg2]"
 
 	// OTHER
-	if((istype(W, /obj/item/weapon/paper) || istype(W, /obj/item/device/pda)) && isliving(user))
+	if((istype(W, /obj/item/weapon/paper) || istype(W, /obj/item/clothing/gloves/pda)) && isliving(user))
 		var/mob/living/U = user
 		var/obj/item/weapon/paper/X = null
-		var/obj/item/device/pda/P = null
+		var/obj/item/clothing/gloves/pda/P = null
 
 		var/itemname = ""
 		var/info = ""

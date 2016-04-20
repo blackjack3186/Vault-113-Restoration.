@@ -27,10 +27,10 @@ Captain
 	name = "Overseer"
 
 	id = /obj/item/weapon/card/id/gold
-	belt = /obj/item/device/pda/captain
+	gloves = /obj/item/clothing/gloves/pda/captain
 	glasses = /obj/item/clothing/glasses/sunglasses
 	ears = /obj/item/device/radio/headset/heads/captain/alt
-	gloves = /obj/item/clothing/gloves/color/captain
+	//gloves = /obj/item/clothing/gloves/color/captain
 	uniform =  /obj/item/clothing/under/rank/captain
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace
 	shoes = /obj/item/clothing/shoes/sneakers/brown
@@ -92,7 +92,7 @@ Head of Personnel
 	name = "Head of Personnel"
 
 	id = /obj/item/weapon/card/id/silver
-	belt = /obj/item/device/pda/heads/hop
+	gloves = /obj/item/clothing/gloves/pda/heads/hop
 	ears = /obj/item/device/radio/headset/heads/hop
 	uniform = /obj/item/clothing/under/rank/head_of_personnel
 	shoes = /obj/item/clothing/shoes/sneakers/brown

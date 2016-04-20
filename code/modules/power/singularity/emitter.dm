@@ -246,7 +246,7 @@
 						disconnect_from_network()
 		return
 
-	if(istype(W, /obj/item/weapon/card/id) || istype(W, /obj/item/device/pda))
+	if(istype(W, /obj/item/weapon/card/id) || istype(W, /obj/item/clothing/gloves/pda))
 		if(emagged)
 			user << "<span class='warning'>The lock seems to be broken!</span>"
 			return

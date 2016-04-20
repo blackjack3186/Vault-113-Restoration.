@@ -65,8 +65,8 @@ var/const/CALL_SHUTTLE_REASON_LENGTH = 12
 		if("login")
 			var/mob/M = usr
 			var/obj/item/weapon/card/id/I = M.get_active_hand()
-			if (istype(I, /obj/item/device/pda))
-				var/obj/item/device/pda/pda = I
+			if (istype(I, /obj/item/clothing/gloves/pda))
+				var/obj/item/clothing/gloves/pda/pda = I
 				I = pda.id
 			if (I && istype(I))
 				if(src.check_access(I))
@@ -83,8 +83,8 @@ var/const/CALL_SHUTTLE_REASON_LENGTH = 12
 		if("swipeidseclevel")
 			var/mob/M = usr
 			var/obj/item/weapon/card/id/I = M.get_active_hand()
-			if (istype(I, /obj/item/device/pda))
-				var/obj/item/device/pda/pda = I
+			if (istype(I, /obj/item/clothing/gloves/pda))
+				var/obj/item/clothing/gloves/pda/pda = I
 				I = pda.id
 			if (I && istype(I))
 				if(access_captain in I.access)

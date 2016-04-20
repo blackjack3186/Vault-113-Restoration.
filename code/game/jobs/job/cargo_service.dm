@@ -20,7 +20,7 @@ Quartermaster
 /datum/outfit/job/quartermaster
 	name = "Quartermaster"
 
-	belt = /obj/item/device/pda/quartermaster
+	gloves = /obj/item/clothing/gloves/pda/quartermaster
 	ears = /obj/item/device/radio/headset/headset_cargo
 	uniform = /obj/item/clothing/under/rank/cargo
 	shoes = /obj/item/clothing/shoes/sneakers/brown
@@ -49,7 +49,7 @@ Cargo Technician
 /datum/outfit/job/cargo_tech
 	name = "Cargo Technician"
 
-	belt = /obj/item/device/pda/cargo
+	gloves = /obj/item/clothing/gloves/pda/cargo
 	ears = /obj/item/device/radio/headset/headset_cargo
 	uniform = /obj/item/clothing/under/rank/cargotech
 
@@ -76,7 +76,7 @@ Shaft Miner
 /datum/outfit/job/miner
 	name = "Shaft Miner"
 
-	belt = /obj/item/device/pda/shaftminer
+	gloves = /obj/item/clothing/gloves/pda/shaftminer
 	ears = /obj/item/device/radio/headset/headset_cargo
 	uniform = /obj/item/clothing/under/rank/miner
 	l_pocket = /obj/item/weapon/reagent_containers/pill/patch/styptic
@@ -112,7 +112,7 @@ Bartender
 	name = "Bartender"
 
 	glasses = /obj/item/clothing/glasses/sunglasses/reagent
-	belt = /obj/item/device/pda/bar
+	belt = /obj/item/clothing/gloves/pda/bar
 	ears = /obj/item/device/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/bartender
 	suit = /obj/item/clothing/suit/armor/vest
@@ -142,7 +142,7 @@ Cook
 /datum/outfit/job/cook
 	name = "Cook"
 
-	belt = /obj/item/device/pda/cook
+	gloves = /obj/item/clothing/gloves/pda/cook
 	ears = /obj/item/device/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/chef
 	suit = /obj/item/clothing/suit/toggle/chef
@@ -179,11 +179,11 @@ Botanist
 /datum/outfit/job/botanist
 	name = "Botanist"
 
-	belt = /obj/item/device/pda/botanist
+	gloves = /obj/item/clothing/gloves/pda/botanist
 	ears = /obj/item/device/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/hydroponics
 	suit = /obj/item/clothing/suit/apron
-	gloves  =/obj/item/clothing/gloves/botanic_leather
+	//gloves  =/obj/item/clothing/gloves/botanic_leather
 	suit_store = /obj/item/device/analyzer/plant_analyzer
 
 
@@ -210,6 +210,6 @@ Janitor
 /datum/outfit/job/janitor
 	name = "Janitor"
 
-	belt = /obj/item/device/pda/janitor
+	gloves = /obj/item/clothing/gloves/pda/janitor
 	ears = /obj/item/device/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/janitor
