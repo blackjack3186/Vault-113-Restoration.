@@ -359,6 +359,10 @@ var/global/image/fire_overlay = image("icon" = 'icons/effects/fire.dmi', "icon_s
 /obj/item/proc/mob_can_equip(mob/M, slot, disable_warning = 0)
 	if(!M)
 		return 0
+	if(istype(M, /mob/living/carbon/human))
+		var/mob/living/carbon/human/humanmob = M
+		if (humanmob.dna && humanmob.dna.species.id == "bigmutant")
+			return 0
 
 	return M.can_equip(src, slot, disable_warning)
 

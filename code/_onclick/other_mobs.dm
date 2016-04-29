@@ -20,7 +20,10 @@
 
 	if(override)	return
 
-	A.attack_hand(src)
+	if (dna.species && dna.species.id=="bigmutant")
+		A.attack_hulk(src)
+	else
+		A.attack_hand(src)
 
 /atom/proc/attack_hand(mob/user)
 	return

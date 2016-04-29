@@ -55,6 +55,9 @@ Please contact me on #coderbus IRC. ~Carnie x
 /mob/living/carbon/human/proc/update_base_icon_state()
 	base_icon_state = dna.species.update_base_icon_state(src)
 	icon_state = "[base_icon_state]_s"
+	//ugly
+	if (dd_hasprefix(icon_state, "hulk")!=0)
+		icon = 'icons/mob/hulk.dmi'
 
 
 //DAMAGE OVERLAYS

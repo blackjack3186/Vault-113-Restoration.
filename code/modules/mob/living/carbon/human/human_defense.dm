@@ -104,9 +104,12 @@
 	var/target_area = parse_zone(target_limb.name)
 	feedback_add_details("item_used_for_combat","[I.type]|[I.force]")
 	feedback_add_details("zone_targeted","[target_area]")
-
+	var/dammod = 0
+	var/mob/living/carbon/human/humanUser = user
+	if (istype(humanUser) && humanUser.dna && humanUser.dna.species && humanUser.dna.species.id=="bigmutant")
+		dammod = 15
 	// the attacked_by code varies among species
-	return dna.species.spec_attacked_by(I,user,def_zone,affecting,hit_area,src.a_intent,target_limb,target_area,src)
+	return dna.species.spec_attacked_by(I,user,def_zone,affecting,hit_area,src.a_intent,target_limb,target_area,src, dammod)
 
 /mob/living/carbon/human/emp_act(severity)
 	var/informed = 0

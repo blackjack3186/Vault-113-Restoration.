@@ -2,6 +2,9 @@
 	if(user.a_intent == "harm")
 		..(user, 1)
 		adjustBruteLoss(15)
+		if (rand(100)<=15)
+			Weaken(5)
+			src << "Powerful strike makes you fall down!"
 
 /mob/living/carbon/human/attack_hand(mob/living/carbon/human/M)
 	if(..())	//to allow surgery to return properly.
