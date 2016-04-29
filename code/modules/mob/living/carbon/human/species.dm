@@ -126,11 +126,17 @@
 		else
 			if (id=="ghoul")
 				return "zombie"
+			else if (id=="bigmutant")
+				//ugly ugly fixes =/
+				return pick("hulk", "hulk_113", "hulk_armored");
 			else
 				return "[id]_[(H.gender == FEMALE) ? "f" : "m"]"
 	else
 		if (id=="ghoul")
 			return "zombie"
+		else if (id=="bigmutant")
+			//ugly ugly copypaste =/
+			return pick("hulk", "hulk_113", "hulk_armored");
 		else
 			return "[id]"
 
@@ -1057,11 +1063,11 @@
 								"<span class='userdanger'>[M] attemped to disarm [H]!</span>")
 	return
 
-/datum/species/proc/spec_attacked_by(obj/item/I, mob/living/user, def_zone, obj/item/organ/limb/affecting, hit_area, intent, obj/item/organ/limb/target_limb, target_area, mob/living/carbon/human/H)
+/datum/species/proc/spec_attacked_by(obj/item/I, mob/living/user, def_zone, obj/item/organ/limb/affecting, hit_area, intent, obj/item/organ/limb/target_limb, target_area, mob/living/carbon/human/H, dammod)
 	// Allows you to put in item-specific reactions based on species
 	if(user != H)
 		user.do_attack_animation(H)
-		if(H.check_shields(I.force, "the [I.name]", I, MELEE_ATTACK, I.armour_penetration))
+		if(H.check_shields(I.force+dammod, "the [I.name]", I, MELEE_ATTACK, I.armour_penetration))
 			return 0
 
 	if(I.attack_verb && I.attack_verb.len)
@@ -1075,15 +1081,15 @@
 
 	var/armor_block = H.run_armor_check(affecting, "melee", "<span class='notice'>Your armor has protected your [hit_area].</span>", "<span class='notice'>Your armor has softened a hit to your [hit_area].</span>",I.armour_penetration)
 	armor_block = min(90,armor_block) //cap damage reduction at 90%
-	var/Iforce = I.force //to avoid runtimes on the forcesay checks at the bottom. Some items might delete themselves if you drop them. (stunning yourself, ninja swords)
+	var/Iforce = I.force+dammod //to avoid runtimes on the forcesay checks at the bottom. Some items might delete themselves if you drop them. (stunning yourself, ninja swords)
 
-	apply_damage(I.force, I.damtype, affecting, armor_block, H)
+	apply_damage(Iforce, I.damtype, affecting, armor_block, H)
 
 	var/bloody = 0
-	if(((I.damtype == BRUTE) && I.force && prob(25 + (I.force * 2))))
+	if(((I.damtype == BRUTE) && Iforce && prob(25 + (Iforce * 2))))
 		if(affecting.status == ORGAN_ORGANIC)
 			I.add_blood(H)	//Make the weapon bloody, not the person.
-			if(prob(I.force * 2))	//blood spatter!
+			if(prob(Iforce * 2))	//blood spatter!
 				bloody = 1
 				var/turf/location = H.loc
 				if(istype(location, /turf/simulated))
@@ -1108,11 +1114,11 @@
 		switch(hit_area)
 			if("head")	//Harder to score a stun but if you do it lasts a bit longer
 				if(H.stat == CONSCIOUS && armor_block < 50)
-					if(prob(I.force))
+					if(prob(Iforce))
 						H.visible_message("<span class='danger'>[H] has been knocked unconscious!</span>", \
 										"<span class='userdanger'>[H] has been knocked unconscious!</span>")
 						H.apply_effect(20, PARALYZE, armor_block)
-					if(prob(I.force + ((100 - H.health)/2)) && H != user && I.damtype == BRUTE)
+					if(prob(Iforce + ((100 - H.health)/2)) && H != user && I.damtype == BRUTE)
 						ticker.mode.remove_revolutionary(H.mind)
 
 				if(bloody)	//Apply blood
@@ -1127,7 +1133,7 @@
 						H.update_inv_glasses()
 
 			if("chest")	//Easier to score a stun but lasts less time
-				if(H.stat == CONSCIOUS && I.force && prob(I.force + 10))
+				if(H.stat == CONSCIOUS && Iforce && prob(Iforce + 10))
 					H.visible_message("<span class='danger'>[H] has been knocked down!</span>", \
 									"<span class='userdanger'>[H] has been knocked down!</span>")
 					H.apply_effect(5, WEAKEN, armor_block)
