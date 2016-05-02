@@ -498,16 +498,6 @@ var/global/list/rockTurfEdgeCache
 
 /**********************Asteroid**************************/
 
-/turf/simulated/floor/plating/asteroid //floor piece
-	name = "Asteroid"
-	baseturf = /turf/simulated/floor/plating/asteroid
-	icon = 'icons/turf/floors.dmi'
-	icon_state = "asteroid"
-	icon_plating = "asteroid"
-	var/environment_type = "asteroid"
-	var/turf_type = /turf/simulated/floor/plating/asteroid //Because caves do whacky shit to revert to normal
-	var/dug = 0       //0 = has not yet been dug, 1 = has already been dug
-
 /turf/simulated/floor/plating/asteroid/airless
 	oxygen = 0.01
 	nitrogen = 0.01
@@ -566,67 +556,6 @@ var/global/list/rockTurfEdgeCache
 				src.gets_dug()
 		if(1)
 			src.gets_dug()
-	return
-
-/turf/simulated/floor/plating/asteroid/attackby(obj/item/weapon/W, mob/user, params)
-	//note that this proc does not call ..()
-	if(!W || !user)
-		return 0
-	var/digging_speed = 0
-	if (istype(W, /obj/item/weapon/shovel))
-		var/obj/item/weapon/shovel/S = W
-		digging_speed = S.digspeed
-	else if (istype(W, /obj/item/weapon/pickaxe))
-		var/obj/item/weapon/pickaxe/P = W
-		digging_speed = P.digspeed
-	if (digging_speed)
-		var/turf/T = user.loc
-		if (!( istype(T, /turf) ))
-			return
-
-		if (dug)
-			user << "<span class='warning'>This area has already been dug!</span>"
-			return
-
-		user << "<span class='notice'>You start digging...</span>"
-		playsound(src, 'sound/effects/shovel_dig.ogg', 50, 1) //FUCK YO RUSTLE I GOT'S THE DIGS SOUND HERE
-
-		if(do_after(user, digging_speed, target = src))
-			if(istype(src, /turf/simulated/floor/plating/asteroid))
-				user << "<span class='notice'>You dig a hole.</span>"
-				gets_dug()
-				feedback_add_details("pick_used_mining","[W.type]")
-
-	if(istype(W,/obj/item/weapon/storage/bag/ore))
-		var/obj/item/weapon/storage/bag/ore/S = W
-		if(S.collection_mode == 1)
-			for(var/obj/item/weapon/ore/O in src.contents)
-				O.attackby(W,user)
-				return
-
-	if(istype(W, /obj/item/stack/tile))
-		var/obj/item/stack/tile/Z = W
-		if(!Z.use(1))
-			return
-		var/turf/simulated/floor/T = ChangeTurf(Z.turf_type)
-		if(istype(Z,/obj/item/stack/tile/light)) //TODO: get rid of this ugly check somehow
-			var/obj/item/stack/tile/light/L = Z
-			var/turf/simulated/floor/light/F = T
-			F.state = L.state
-		playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
-
-/turf/simulated/floor/plating/asteroid/proc/gets_dug()
-	if(dug)
-		return
-	new/obj/item/weapon/ore/glass(src)
-	new/obj/item/weapon/ore/glass(src)
-	new/obj/item/weapon/ore/glass(src)
-	new/obj/item/weapon/ore/glass(src)
-	new/obj/item/weapon/ore/glass(src)
-	dug = 1
-	icon_plating = "[environment_type]_dug"
-	icon_state = "[environment_type]_dug"
-	slowdown = 0
 	return
 
 /turf/simulated/floor/plating/asteroid/singularity_act()
