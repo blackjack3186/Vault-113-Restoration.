@@ -120,6 +120,12 @@
 	burn_state = FLAMMABLE
 	burntime = 20
 
+/obj/structure/closet/coffin/container_resist()
+	if (src.loc && istype(src.loc, /obj/dugpit))
+		usr << "<span class='danger'>You bang at the coffin, but it is no use!</span>"
+		return
+	..()
+
 /obj/structure/closet/wardrobe/red
 	name = "security wardrobe"
 	icon_door = "red"

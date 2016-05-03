@@ -643,7 +643,10 @@ Sorry Giacom. Please don't be mad :(
 
 	//Breaking out of a container (Locker, sleeper, cryo...)
 	else if(loc && istype(loc, /obj) && !isturf(loc))
-		if(stat == CONSCIOUS && !stunned && !weakened && !paralysis)
+		if (istype(loc, /obj/dugpit))
+			var/obj/dugpit/pit = loc
+			pit.dugresist(src)
+		else if(stat == CONSCIOUS && !stunned && !weakened && !paralysis)
 			var/obj/C = loc
 			C.container_resist(src)
 
