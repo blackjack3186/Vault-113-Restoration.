@@ -328,15 +328,15 @@
 			if(!SSshuttle.canRecall())
 				dat += "<div class='notice red'>The station is currently undergoing evacuation procedures.</div><br>"
 
-	var/available_job_count = 0
+	/*var/available_job_count = 0
 	for(var/datum/job/job in SSjob.occupations)
 		if(job && IsJobAvailable(job.title))
-			available_job_count++;
+			available_job_count++;*/
 
 	dat += "<div class='clearBoth'>Spawn as wastelander:</div><br>"
 	dat += "<div class='jobs'><div class='jobsColumn'>"
 	var/job_count = 0
-	for(var/datum/job/job in SSjob.occupations)
+	/*for(var/datum/job/job in SSjob.occupations)
 		if(job && IsJobAvailable(job.title))
 			job_count++;
 			if (job_count > round(available_job_count / 2))
@@ -349,7 +349,12 @@
 		for(var/datum/job/job in SSjob.occupations)
 			if(job.title != "Assistant") continue
 			dat += "<a class='otherPosition' href='byond://?src=\ref[src];SelectedJob=[job.title]'>[job.title] ([job.current_positions])</a><br>"
-			break
+			break*/
+
+	for(var/datum/job/job in SSjob.desert_occupations)
+		dat += "<a class='otherPosition' href='byond://?src=\ref[src];SelectedJob=[job.title]'>[job.title] ([job.current_positions])</a><br>"
+		break
+
 	dat += "</div></div>"
 
 	// Removing the old window method but leaving it here for reference

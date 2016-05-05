@@ -22,7 +22,7 @@ Chaplain
 	name = "Chaplain"
 
 	gloves = /obj/item/clothing/gloves/pda/chaplain
-	uniform = /obj/item/clothing/under/rank/chaplain
+	uniform = /obj/item/clothing/under/f13/vault
 	backpack_contents = list(/obj/item/device/camera/spooky = 1)
 
 

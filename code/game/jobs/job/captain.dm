@@ -31,7 +31,7 @@ Captain
 	glasses = /obj/item/clothing/glasses/sunglasses
 	ears = /obj/item/device/radio/headset/heads/captain/alt
 	//gloves = /obj/item/clothing/gloves/color/captain
-	uniform =  /obj/item/clothing/under/rank/captain
+	uniform = /obj/item/clothing/under/f13/vault
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	head = /obj/item/clothing/head/caphat
@@ -94,7 +94,7 @@ Head of Personnel
 	id = /obj/item/weapon/card/id/silver
 	gloves = /obj/item/clothing/gloves/pda/heads/hop
 	ears = /obj/item/device/radio/headset/heads/hop
-	uniform = /obj/item/clothing/under/rank/head_of_personnel
+	uniform = /obj/item/clothing/under/f13/vault
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	head = /obj/item/clothing/head/hopcap
 	backpack_contents = list(/obj/item/weapon/storage/box/ids=1,\

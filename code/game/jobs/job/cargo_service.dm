@@ -22,7 +22,7 @@ Quartermaster
 
 	gloves = /obj/item/clothing/gloves/pda/quartermaster
 	ears = /obj/item/device/radio/headset/headset_cargo
-	uniform = /obj/item/clothing/under/rank/cargo
+	uniform = /obj/item/clothing/under/f13/vault
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	glasses = /obj/item/clothing/glasses/sunglasses
 	l_hand = /obj/item/weapon/clipboard
@@ -51,7 +51,7 @@ Cargo Technician
 
 	gloves = /obj/item/clothing/gloves/pda/cargo
 	ears = /obj/item/device/radio/headset/headset_cargo
-	uniform = /obj/item/clothing/under/rank/cargotech
+	uniform = /obj/item/clothing/under/f13/vault
 
 
 /*
@@ -78,7 +78,7 @@ Shaft Miner
 
 	gloves = /obj/item/clothing/gloves/pda/shaftminer
 	ears = /obj/item/device/radio/headset/headset_cargo
-	uniform = /obj/item/clothing/under/rank/miner
+	uniform = /obj/item/clothing/under/f13/vault
 	l_pocket = /obj/item/weapon/reagent_containers/pill/patch/styptic
 	backpack_contents = list(/obj/item/weapon/crowbar=1,\
 		/obj/item/weapon/storage/bag/ore=1,\
@@ -114,7 +114,7 @@ Bartender
 	glasses = /obj/item/clothing/glasses/sunglasses/reagent
 	belt = /obj/item/clothing/gloves/pda/bar
 	ears = /obj/item/device/radio/headset/headset_srv
-	uniform = /obj/item/clothing/under/rank/bartender
+	uniform = /obj/item/clothing/under/f13/vault
 	suit = /obj/item/clothing/suit/armor/vest
 	backpack_contents = list(/obj/item/ammo_casing/shotgun/beanbag=4)
 	shoes = /obj/item/clothing/shoes/laceup
@@ -144,17 +144,9 @@ Cook
 
 	gloves = /obj/item/clothing/gloves/pda/cook
 	ears = /obj/item/device/radio/headset/headset_srv
-	uniform = /obj/item/clothing/under/rank/chef
+	uniform = /obj/item/clothing/under/f13/vault
 	suit = /obj/item/clothing/suit/toggle/chef
 	head = /obj/item/clothing/head/chefhat
-
-/datum/outfit/job/cook/pre_equip(mob/living/carbon/human/H)
-	..()
-	var/datum/job/cook/J = SSjob.GetJob(H.job)
-	J.cooks++
-	if(J.cooks>1)//Cooks
-		suit = /obj/item/clothing/suit/apron/chef
-		head = /obj/item/clothing/head/soft/mime
 
 
 /*
@@ -181,7 +173,7 @@ Botanist
 
 	gloves = /obj/item/clothing/gloves/pda/botanist
 	ears = /obj/item/device/radio/headset/headset_srv
-	uniform = /obj/item/clothing/under/rank/hydroponics
+	uniform = /obj/item/clothing/under/f13/vault
 	suit = /obj/item/clothing/suit/apron
 	//gloves  =/obj/item/clothing/gloves/botanic_leather
 	suit_store = /obj/item/device/analyzer/plant_analyzer
@@ -212,4 +204,4 @@ Janitor
 
 	gloves = /obj/item/clothing/gloves/pda/janitor
 	ears = /obj/item/device/radio/headset/headset_srv
-	uniform = /obj/item/clothing/under/rank/janitor
+	uniform = /obj/item/clothing/under/f13/vault
