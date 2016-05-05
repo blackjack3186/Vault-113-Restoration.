@@ -21,7 +21,7 @@ Clown
 	name = "Clown"
 
 	gloves = /obj/item/clothing/gloves/pda/clown
-	uniform = /obj/item/clothing/under/rank/clown
+	uniform = /obj/item/clothing/under/f13/vault
 	shoes = /obj/item/clothing/shoes/clown_shoes
 	mask = /obj/item/clothing/mask/gas/clown_hat
 	l_pocket = /obj/item/weapon/bikehorn
@@ -73,7 +73,7 @@ Mime
 	name = "Mime"
 
 	gloves = /obj/item/clothing/gloves/pda/mime
-	uniform = /obj/item/clothing/under/rank/mime
+	uniform = /obj/item/clothing/under/f13/vault
 	mask = /obj/item/clothing/mask/gas/mime
 	//gloves = /obj/item/clothing/gloves/color/white
 	head = /obj/item/clothing/head/beret
@@ -150,7 +150,7 @@ Lawyer
 
 	gloves = /obj/item/clothing/gloves/pda/lawyer
 	ears = /obj/item/device/radio/headset/headset_sec
-	uniform = /obj/item/clothing/under/lawyer/bluesuit
+	uniform = /obj/item/clothing/under/f13/vault
 	suit = /obj/item/clothing/suit/toggle/lawyer
 	shoes = /obj/item/clothing/shoes/laceup
 	l_hand = /obj/item/weapon/storage/briefcase
@@ -165,5 +165,5 @@ Lawyer
 	var/datum/job/lawyer/J = SSjob.GetJob(H.job)
 	J.lawyers++
 	if(J.lawyers>1)
-		uniform = /obj/item/clothing/under/lawyer/purpsuit
+		uniform = /obj/item/clothing/under/f13/vault
 		suit = /obj/item/clothing/suit/toggle/lawyer/purple

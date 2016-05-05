@@ -5,8 +5,9 @@ var/global/list/obj/item/clothing/gloves/pda/PDAs = list()
 
 
 /obj/item/clothing/gloves/pda
+	var/desco= "" //examine = desco + locked/unlocked
 	name = "\improper PDA"
-	desc = "A portable microcomputer by Thinktronic Systems, LTD. Functionality determined by a preprogrammed ROM cartridge."
+	desco = "A portable microcomputer by Thinktronic Systems, LTD. Functionality determined by a preprogrammed ROM cartridge."
 	icon = 'icons/obj/pda.dmi'
 	icon_state = "pda"
 	item_state = "Pip-boy"
@@ -41,7 +42,7 @@ var/global/list/obj/item/clothing/gloves/pda/PDAs = list()
 	var/detonate = 1 // Can the PDA be blown up?
 	var/hidden = 0 // Is the PDA hidden from the PDA list?
 	var/emped = 0
-	var/locked_on_hand = 1 //when 1, you can't take it off the hand
+	var/locked_on_hand = 0 //when 1, you can't take it off the hand
 
 	var/obj/item/weapon/card/id/id = null //Making it possible to slot an ID card into the PDA so it can function as both.
 	var/ownjob = null //related to above
@@ -49,6 +50,13 @@ var/global/list/obj/item/clothing/gloves/pda/PDAs = list()
 	var/obj/item/clothing/gloves/paicard/pai = null	// A slot for a personal AI device
 
 	var/image/photo = null //Scanned photo
+
+/obj/item/clothing/gloves/pda/examine(mob/user)
+	var/append = " It is unlocked."
+	if (locked_on_hand==1)
+		append = " It is locked."
+	src.desc = src.desco + append;
+	..()
 
 /obj/item/clothing/gloves/pda/medical
 	default_cartridge = /obj/item/weapon/cartridge/medical
@@ -87,7 +95,7 @@ var/global/list/obj/item/clothing/gloves/pda/PDAs = list()
 /obj/item/clothing/gloves/pda/clown
 	default_cartridge = /obj/item/weapon/cartridge/clown
 	icon_state = "pda-clown"
-	desc = "A portable microcomputer by Thinktronic Systems, LTD. The surface is coated with polytetrafluoroethylene and banana drippings."
+	desco = "A portable microcomputer by Thinktronic Systems, LTD. The surface is coated with polytetrafluoroethylene and banana drippings."
 	ttone = "honk"
 
 /obj/item/clothing/gloves/pda/mime
@@ -164,13 +172,13 @@ var/global/list/obj/item/clothing/gloves/pda/PDAs = list()
 	icon_state = "pda-library"
 	icon_alert = "pda-r-library"
 	default_cartridge = /obj/item/weapon/cartridge/librarian
-	desc = "A portable microcomputer by Thinktronic Systems, LTD. This is model is a WGW-11 series e-reader."
+	desco = "A portable microcomputer by Thinktronic Systems, LTD. This is model is a WGW-11 series e-reader."
 	note = "Congratulations, your station has chosen the Thinktronic 5290 WGW-11 Series E-reader and Personal Data Assistant!"
 	silent = 1 //Quiet in the library!
 
 /obj/item/clothing/gloves/pda/clear
 	icon_state = "pda-clear"
-	desc = "A portable microcomputer by Thinktronic Systems, LTD. This is model is a special edition with a transparent case."
+	desco = "A portable microcomputer by Thinktronic Systems, LTD. This is model is a special edition with a transparent case."
 	note = "Congratulations, you have chosen the Thinktronic 5230 Personal Data Assistant Deluxe Special Max Turbo Limited Edition!"
 
 /obj/item/clothing/gloves/pda/cook

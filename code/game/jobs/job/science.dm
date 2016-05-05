@@ -33,7 +33,7 @@ Research Director
 	id = /obj/item/weapon/card/id/silver
 	gloves = /obj/item/clothing/gloves/pda/heads/rd
 	ears = /obj/item/device/radio/headset/heads/rd
-	uniform = /obj/item/clothing/under/rank/research_director
+	uniform = /obj/item/clothing/under/f13/vault
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	suit = /obj/item/clothing/suit/toggle/labcoat
 	l_hand = /obj/item/weapon/clipboard
@@ -72,7 +72,7 @@ Scientist
 
 	gloves = /obj/item/clothing/gloves/pda/toxins
 	ears = /obj/item/device/radio/headset/headset_sci
-	uniform = /obj/item/clothing/under/rank/scientist
+	uniform = /obj/item/clothing/under/f13/vault
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	suit = /obj/item/clothing/suit/toggle/labcoat/science
 
@@ -101,7 +101,7 @@ Roboticist
 	belt = /obj/item/weapon/storage/belt/utility/full
 	l_pocket = /obj/item/clothing/gloves/pda/roboticist
 	ears = /obj/item/device/radio/headset/headset_sci
-	uniform = /obj/item/clothing/under/rank/roboticist
+	uniform = /obj/item/clothing/under/f13/vault
 	suit = /obj/item/clothing/suit/toggle/labcoat
 
 	pda_slot = slot_l_store

@@ -32,7 +32,7 @@ Chief Engineer
 	gloves = /obj/item/weapon/storage/belt/utility/full
 	l_pocket = /obj/item/clothing/gloves/pda/heads/ce
 	ears = /obj/item/device/radio/headset/heads/ce
-	uniform = /obj/item/clothing/under/rank/chief_engineer
+	uniform = /obj/item/clothing/under/f13/vault
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	head = /obj/item/clothing/head/hardhat/white
 	//gloves = /obj/item/clothing/gloves/color/black/ce
@@ -78,7 +78,7 @@ Station Engineer
 	gloves = /obj/item/weapon/storage/belt/utility/full
 	l_pocket = /obj/item/clothing/gloves/pda/engineering
 	ears = /obj/item/device/radio/headset/headset_eng
-	uniform = /obj/item/clothing/under/rank/engineer
+	uniform = /obj/item/clothing/under/f13/vault
 	shoes = /obj/item/clothing/shoes/workboots
 	head = /obj/item/clothing/head/hardhat
 	r_pocket = /obj/item/device/t_scanner
@@ -114,7 +114,7 @@ Atmospheric Technician
 	belt = /obj/item/weapon/storage/belt/utility/atmostech
 	l_pocket = /obj/item/clothing/gloves/pda/atmos
 	ears = /obj/item/device/radio/headset/headset_eng
-	uniform = /obj/item/clothing/under/rank/atmospheric_technician
+	uniform = /obj/item/clothing/under/f13/vault
 	r_pocket = /obj/item/device/analyzer
 
 	box = /obj/item/weapon/storage/box/engineer
