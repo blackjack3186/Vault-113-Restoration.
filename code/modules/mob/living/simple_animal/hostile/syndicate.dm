@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/syndicate
-	name = "Syndicate Operative"
-	desc = "Death to Nanotrasen."
+	name = "Enclave soldier"
+	desc = "Death to Wasteland."
 	icon_state = "syndicate"
 	icon_living = "syndicate"
 	icon_dead = "syndicate_dead"

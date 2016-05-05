@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/russian
-	name = "Russian"
-	desc = "For the Motherland!"
+	name = "Raider"
+	desc = "He is very bad angry jerk."
 	icon_state = "russianmelee"
 	icon_living = "russianmelee"
 	icon_dead = "russianmelee_dead"
@@ -13,10 +13,10 @@
 	speed = 0
 	maxHealth = 100
 	health = 100
-	harm_intent_damage = 5
+	harm_intent_damage = 10
 	melee_damage_lower = 15
 	melee_damage_upper = 15
-	attacktext = "punches"
+	attacktext = "bashes"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	a_intent = "harm"
 	var/corpse = /obj/effect/landmark/mobcorpse/russian

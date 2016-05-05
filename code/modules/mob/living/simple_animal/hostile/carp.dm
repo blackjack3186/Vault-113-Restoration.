@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/carp
-	name = "space carp"
-	desc = "A ferocious, fang-bearing creature that resembles a fish."
+	name = "Cazador"
+	desc = "Big flying thing."
 	icon_state = "carp"
 	icon_living = "carp"
 	icon_dead = "carp_dead"
@@ -14,13 +14,13 @@
 	emote_taunt = list("gnashes")
 	taunt_chance = 30
 	speed = 0
-	maxHealth = 25
-	health = 25
+	maxHealth = 50
+	health = 50
 
-	harm_intent_damage = 8
+	harm_intent_damage = 10
 	melee_damage_lower = 15
 	melee_damage_upper = 15
-	attacktext = "bites"
+	attacktext = "stings"
 	attack_sound = 'sound/weapons/bite.ogg'
 	speak_emote = list("gnashes")
 
