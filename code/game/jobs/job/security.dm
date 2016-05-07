@@ -37,7 +37,7 @@ Head of Security
 	id = /obj/item/weapon/card/id/silver
 	gloves = /obj/item/clothing/gloves/pda/heads/hos
 	ears = /obj/item/device/radio/headset/heads/hos/alt
-	uniform = /obj/item/clothing/under/f13/vault
+	uniform = /obj/item/clothing/under/f13/vault/v13
 	shoes = /obj/item/clothing/shoes/jackboots
 	suit = /obj/item/clothing/suit/armor/hos/trenchcoat
 	//gloves = /obj/item/clothing/gloves/color/black/hos
@@ -92,7 +92,7 @@ Warden
 
 	gloves = /obj/item/clothing/gloves/pda/warden
 	ears = /obj/item/device/radio/headset/headset_sec/alt
-	uniform = /obj/item/clothing/under/f13/vault
+	uniform = /obj/item/clothing/under/f13/vault/v13
 	shoes = /obj/item/clothing/shoes/jackboots
 	suit = /obj/item/clothing/suit/armor/vest/warden
 	//gloves = /obj/item/clothing/gloves/color/black
@@ -141,7 +141,7 @@ Detective
 
 	gloves = /obj/item/clothing/gloves/pda/detective
 	ears = /obj/item/device/radio/headset/headset_sec
-	uniform = /obj/item/clothing/under/f13/vault
+	uniform = /obj/item/clothing/under/f13/vault/v13
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	suit = /obj/item/clothing/suit/det_suit
 	//gloves = /obj/item/clothing/gloves/color/black
@@ -198,7 +198,7 @@ var/list/sec_departments = list("engineering", "supply", "medical", "science")
 
 	gloves = /obj/item/clothing/gloves/pda/security
 	ears = /obj/item/device/radio/headset/headset_sec/alt
-	uniform = /obj/item/clothing/under/f13/vault
+	uniform = /obj/item/clothing/under/f13/vault/v13
 	//gloves = /obj/item/clothing/gloves/color/black
 	head = /obj/item/clothing/head/helmet/sec
 	suit = /obj/item/clothing/suit/armor/vest

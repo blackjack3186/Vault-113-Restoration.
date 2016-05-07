@@ -24,25 +24,32 @@ Scavenger
 
 /datum/outfit/job/scavenger/pre_equip(mob/living/carbon/human/H)
 	..()
-	/*var/outfitType = rand(0, 4)
-	switch(outfitType)
-		if (0)
-			uniform = /obj/item/clothing/under/color/orange
-		if (1)
-			uniform = /obj/item/clothing/under/rank/prisoner
-		if (2)
-			uniform = /obj/item/clothing/under/rank/vice
-		if (3)
-			uniform = /obj/item/clothing/under/suit_jacket/really_black
-		if (4)
-			uniform = /obj/item/clothing/under/suit_jacket/checkered
+	uniform = pick(/obj/item/clothing/under/pj/red,\
+		/obj/item/clothing/under/pj/blue,\
+		/obj/item/clothing/under/waiter,\
+		/obj/item/clothing/under/f13/settler,\
+		/obj/item/clothing/under/f13/doctor,\
+		/obj/item/clothing/under/f13/brahmin,\
+		/obj/item/clothing/under/f13/mercadv,\
+		/obj/item/clothing/under/f13/springm,\
+		/obj/item/clothing/under/f13/caravaneer,\
+		/obj/item/clothing/under/f13/roving)
 	if (prob(50))
 		glasses = /obj/item/clothing/glasses/sunglasses
-	if (prob(20))
-		l_pocket = /obj/item/weapon/kitchen/knife
-	if (prob(40))
-		backpack = /obj/item/weapon/storage/backpack/industrial
-		satchel = /obj/item/weapon/storage/backpack/satchel
-		dufflebag = /obj/item/weapon/storage/backpack/dufflebag*/
+	if (prob(80))
+		l_hand = pick(/obj/item/weapon/kitchen/knife,\
+			/obj/item/weapon/storage/toolbox/mechanical,\
+			/obj/item/weapon/storage/firstaid/brute,\
+			/obj/item/weapon/gun/projectile/shotgun,\
+			/obj/item/weapon/melee/classic_baton)
 
-	//TODO: replace above with existing/better items
+
+	if (prob(100))
+		back = /obj/item/weapon/storage/backpack
+		backpack = /obj/item/weapon/storage/backpack
+		satchel = /obj/item/weapon/storage/backpack/satchel_norm
+		backpack_contents = pick(list(/obj/item/weapon/melee/classic_baton/telescopic=1), \
+			list(/obj/item/ammo_casing/shotgun/buckshot = 4), \
+			list(/obj/item/weapon/reagent_containers/food/drinks/nukacola = 3), \
+			list(/obj/item/weapon/storage/firstaid/brute), \
+			list(/obj/item/weapon/reagent_containers/syringe/stimulants))

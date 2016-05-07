@@ -136,7 +136,6 @@
 	uniform = /obj/item/clothing/under/color/grey
 	id = /obj/item/weapon/card/id
 	ears = /obj/item/device/radio/headset
-	gloves = /obj/item/clothing/gloves/pda
 	back = /obj/item/weapon/storage/backpack
 	shoes = /obj/item/clothing/shoes/sneakers/black
 

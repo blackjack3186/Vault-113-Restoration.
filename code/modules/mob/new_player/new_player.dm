@@ -335,8 +335,8 @@
 
 	dat += "<div class='clearBoth'>Spawn as wastelander:</div><br>"
 	dat += "<div class='jobs'><div class='jobsColumn'>"
-	var/job_count = 0
-	/*for(var/datum/job/job in SSjob.occupations)
+	/*var/job_count = 0
+	for(var/datum/job/job in SSjob.occupations)
 		if(job && IsJobAvailable(job.title))
 			job_count++;
 			if (job_count > round(available_job_count / 2))

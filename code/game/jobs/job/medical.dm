@@ -29,7 +29,7 @@ Chief Medical Officer
 	id = /obj/item/weapon/card/id/silver
 	gloves = /obj/item/clothing/gloves/pda/heads/cmo
 	ears = /obj/item/device/radio/headset/heads/cmo
-	uniform = /obj/item/clothing/under/f13/vault
+	uniform = /obj/item/clothing/under/f13/vault/v13
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	suit = /obj/item/clothing/suit/toggle/labcoat/cmo
 	l_hand = /obj/item/weapon/storage/firstaid/regular
@@ -71,7 +71,7 @@ Medical Doctor
 
 	gloves = /obj/item/clothing/gloves/pda/medical
 	ears = /obj/item/device/radio/headset/headset_med
-	uniform = /obj/item/clothing/under/f13/vault
+	uniform = /obj/item/clothing/under/f13/vault/v13
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	suit =  /obj/item/clothing/suit/toggle/labcoat
 	l_hand = /obj/item/weapon/storage/firstaid/regular
@@ -105,7 +105,7 @@ Chemist
 	glasses = /obj/item/clothing/glasses/science
 	gloves = /obj/item/clothing/gloves/pda/chemist
 	ears = /obj/item/device/radio/headset/headset_med
-	uniform = /obj/item/clothing/under/f13/vault
+	uniform = /obj/item/clothing/under/f13/vault/v13
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	suit =  /obj/item/clothing/suit/toggle/labcoat/chemist
 
@@ -133,7 +133,7 @@ Geneticist
 
 	gloves = /obj/item/clothing/gloves/pda/geneticist
 	ears = /obj/item/device/radio/headset/headset_medsci
-	uniform = /obj/item/clothing/under/f13/vault
+	uniform = /obj/item/clothing/under/f13/vault/v13
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	suit =  /obj/item/clothing/suit/toggle/labcoat/genetics
 	suit_store =  /obj/item/device/flashlight/pen
@@ -162,7 +162,7 @@ Virologist
 
 	gloves = /obj/item/clothing/gloves/pda/viro
 	ears = /obj/item/device/radio/headset/headset_med
-	uniform = /obj/item/clothing/under/f13/vault
+	uniform = /obj/item/clothing/under/f13/vault/v13
 	mask = /obj/item/clothing/mask/surgical
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	suit =  /obj/item/clothing/suit/toggle/labcoat/virologist
