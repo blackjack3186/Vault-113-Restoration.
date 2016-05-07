@@ -17,8 +17,8 @@
 	health = 50
 
 	harm_intent_damage = 10
-	melee_damage_lower = 15
-	melee_damage_upper = 15
+	melee_damage_lower = 16
+	melee_damage_upper = 20
 	attacktext = "stings"
 	attack_sound = 'sound/weapons/bite.ogg'
 	speak_emote = list("gnashes")
@@ -86,9 +86,19 @@
 	response_harm = "hits"
 	maxHealth = 250
 	health = 250
-	force_threshold = 25
+	force_threshold = 15
 	faction = list("wmaster")
 	melee_damage_lower = 25
 	melee_damage_upper = 35
 	attacktext = "punches"
 	attack_sound = 'sound/weapons/punch4.ogg'
+
+/mob/living/simple_animal/hostile/badmutant/death(gibbed)
+	health = 0
+	icon = 'icons/mob/Hulk_dead.dmi'
+	icon_state = icon_dead
+	stat = DEAD
+	density = 0
+	if(!gibbed)
+		visible_message("<span class='danger'>\the [src] stops moving...</span>")
+	..()

@@ -156,8 +156,6 @@ obj/dugpit/New(lnk)
 			user << "<span class='notice'>You start digging...</span>"
 			playsound(src, 'sound/effects/shovel_dig.ogg', 50, 1) //FUCK YO RUSTLE I GOT'S THE DIGS SOUND HERE
 			if(do_after(user, digging_speed, target = src))
-				if (mypit==null)
-					mypit = new/obj/dugpit(src)
 				if(istype(src, /turf/simulated/floor/plating/asteroid))
 					user << "<span class='notice'>You dig a hole.</span>"
 					gets_dug(user)
@@ -173,6 +171,8 @@ obj/dugpit/New(lnk)
 		return
 	for (var/obj/item/I in pitcontents)
 		I.loc = user.loc
+	if (mypit==null)
+		mypit = new/obj/dugpit(src)
 	mypit.invisibility = 0
 	storedindex = 0
 	pitcontents = list()
