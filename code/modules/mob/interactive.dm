@@ -437,6 +437,8 @@
 		return 0
 
 /mob/living/carbon/human/interactive/proc/job2area(target)
+	if (target==null)
+		return /area/hallway //todo: wasteland area?
 	var/datum/job/T = target
 	if(T.title == "Assistant")
 		return /area/hallway/primary

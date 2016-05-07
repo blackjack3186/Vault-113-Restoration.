@@ -10,14 +10,14 @@ var/global/list/rockTurfEdgeCache
 	name = "rock"
 	icon = 'icons/turf/mining.dmi'
 	icon_state = "rock_nochance"
-	baseturf = /turf/simulated/floor/plating/asteroid
-	oxygen = 0
-	nitrogen = 0
+	baseturf = /turf/simulated/floor/plating/asteroid/airless
+	//oxygen = 0
+	//nitrogen = 0
 	opacity = 1
 	density = 1
 	blocks_air = 1
 	layer = TURF_LAYER + 0.1
-	temperature = TCMB
+	//temperature = TCMB
 	var/environment_type = "asteroid"
 	var/turf/simulated/floor/plating/asteroid/turf_type = /turf/simulated/floor/plating/asteroid //For basalt vs normal asteroid
 	var/mineralType = null
@@ -329,7 +329,7 @@ var/global/list/rockTurfEdgeCache
 
 /turf/simulated/floor/plating/asteroid/airless/cave
 	var/length = 100
-	var/mob_spawn_list = list("Badmutant" = 1, "Casador" = 2, "Rat" = 3)
+	var/mob_spawn_list = list("Badmutant" = 1, "Casador" = 3, "Rat" = 20)
 	var/sanity = 1
 	turf_type = /turf/simulated/floor/plating/asteroid/airless
 
@@ -409,8 +409,8 @@ var/global/list/rockTurfEdgeCache
 	if(prob(30))
 		if(istype(loc, /area/mine/explored))
 			return
-		for(var/atom/A in ultra_range(15,T))//Lowers chance of mob clumps
-			if(istype(A, /mob/living/simple_animal/hostile/asteroid))
+		for(var/atom/A in ultra_range(25,T))//Lowers chance of mob clumps
+			if(istype(A, /mob/living/simple_animal/hostile))
 				return
 		var/randumb = pickweight(mob_spawn_list)
 		switch(randumb)
@@ -513,7 +513,7 @@ var/global/list/rockTurfEdgeCache
 	baseturf = /turf/simulated/floor/plating/lava/smooth
 
 /turf/simulated/floor/plating/asteroid/basalt/airless
-	temperature = TCMB
+	//temperature = TCMB
 
 /turf/simulated/floor/plating/asteroid/snow
 	name = "snow"
@@ -527,7 +527,7 @@ var/global/list/rockTurfEdgeCache
 	environment_type = "snow"
 
 /turf/simulated/floor/plating/asteroid/snow/airless
-	temperature = TCMB
+	//temperature = TCMB
 
 /turf/simulated/floor/plating/asteroid/New()
 	var/proper_name = name
