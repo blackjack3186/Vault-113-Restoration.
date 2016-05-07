@@ -10,7 +10,7 @@ var/global/list/rockTurfEdgeCache
 	name = "rock"
 	icon = 'icons/turf/mining.dmi'
 	icon_state = "rock_nochance"
-	baseturf = /turf/simulated/floor/plating/asteroid/airless
+	baseturf = /turf/simulated/floor/plating/asteroid
 	oxygen = 0
 	nitrogen = 0
 	opacity = 1
@@ -329,7 +329,7 @@ var/global/list/rockTurfEdgeCache
 
 /turf/simulated/floor/plating/asteroid/airless/cave
 	var/length = 100
-	var/mob_spawn_list = list("Goldgrub" = 1, "Goliath" = 5, "Basilisk" = 4, "Hivelord" = 3)
+	var/mob_spawn_list = list("Badmutant" = 1, "Casador" = 2, "Rat" = 3)
 	var/sanity = 1
 	turf_type = /turf/simulated/floor/plating/asteroid/airless
 
@@ -414,14 +414,12 @@ var/global/list/rockTurfEdgeCache
 				return
 		var/randumb = pickweight(mob_spawn_list)
 		switch(randumb)
-			if("Goliath")
-				new /mob/living/simple_animal/hostile/asteroid/goliath(T)
-			if("Goldgrub")
-				new /mob/living/simple_animal/hostile/asteroid/goldgrub(T)
-			if("Basilisk")
-				new /mob/living/simple_animal/hostile/asteroid/basilisk(T)
-			if("Hivelord")
-				new /mob/living/simple_animal/hostile/asteroid/hivelord(T)
+			if ("Badmutant")
+				new /mob/living/simple_animal/hostile/badmutant(T)
+			if ("Casador")
+				new /mob/living/simple_animal/hostile/cazador(T)
+			if ("Rat")
+				new /mob/living/simple_animal/hostile/molerat(T)
 	return
 
 /turf/simulated/mineral/attackby(obj/item/weapon/pickaxe/P, mob/user, params)
@@ -499,10 +497,9 @@ var/global/list/rockTurfEdgeCache
 /**********************Asteroid**************************/
 
 /turf/simulated/floor/plating/asteroid/airless
-	oxygen = 0.01
-	nitrogen = 0.01
+	//now with air(i hope)
 	turf_type = /turf/simulated/floor/plating/asteroid/airless
-	temperature = TCMB
+	//temperature = TCMB
 
 /turf/simulated/floor/plating/asteroid/basalt
 	name = "volcanic floor"
@@ -516,8 +513,6 @@ var/global/list/rockTurfEdgeCache
 	baseturf = /turf/simulated/floor/plating/lava/smooth
 
 /turf/simulated/floor/plating/asteroid/basalt/airless
-	oxygen = 0.01
-	nitrogen = 0.01
 	temperature = TCMB
 
 /turf/simulated/floor/plating/asteroid/snow
@@ -532,8 +527,6 @@ var/global/list/rockTurfEdgeCache
 	environment_type = "snow"
 
 /turf/simulated/floor/plating/asteroid/snow/airless
-	oxygen = 0.01
-	nitrogen = 0.01
 	temperature = TCMB
 
 /turf/simulated/floor/plating/asteroid/New()
