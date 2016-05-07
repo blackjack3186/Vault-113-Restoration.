@@ -34,4 +34,5 @@ Assistant
 
 /datum/outfit/job/assistant/pre_equip(mob/living/carbon/human/H)
 	..()
-	uniform = /obj/item/clothing/under/f13/vault
+	uniform = /obj/item/clothing/under/f13/vault/v13
+	gloves = /obj/item/clothing/gloves/pda
