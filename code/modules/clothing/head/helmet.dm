@@ -254,6 +254,18 @@
 	strip_delay = 50
 	burn_state = FIRE_PROOF
 
+/obj/item/clothing/head/helmet/f13/combat
+	name = "combat_helmet"
+	desc = "An old combat helmet, out of use around the time of the war."
+	icon_state = "combat_helmet"
+	item_state = "combat_helmet"
+	armor = list(melee = 45, bullet = 45, laser = 15,energy = 25, bomb = 10, bio = 0, rad = 0)
+	flags_inv = HIDEEARS
+	put_on_delay = 10
+	strip_delay = 50
+	burn_state = FIRE_PROOF
+
+
 //Power armor helmets
 
 /obj/item/clothing/head/helmet/f13/advhelmet
