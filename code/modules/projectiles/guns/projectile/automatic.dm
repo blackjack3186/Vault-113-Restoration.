@@ -235,3 +235,16 @@
 	can_suppress = 0
 	burst_size = 3
 	fire_delay = 1
+
+/obj/item/weapon/gun/projectile/automatic/assault_rifle
+	name = "Assault Rifle"
+	desc = "An Assault Rifle. An old military model, out of use around the time of the war."
+	icon_state = "assault_rifle"
+	item_state = "assault_rifle"
+	slot_flags = 0
+	origin_tech = "combat=6;materials=1"
+	mag_type = /obj/item/ammo_box/magazine/m556
+	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+	can_suppress = 0
+	burst_size = 3
+	fire_delay = 1
