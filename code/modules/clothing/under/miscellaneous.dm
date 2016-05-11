@@ -913,6 +913,16 @@
 	armor = list(melee = 20, bullet = 10, laser = 5,energy = 5, bomb = 5, bio = 0, rad = 5)
 	can_adjust = 0
 
+/obj/item/clothing/under/f13/combat
+	name = "combat uniform"
+	desc = "An old combat uniform, out of use around the time of the war."
+	icon_state = "combat_shirt"
+	item_state = "bl_suit"
+	item_color = "combat_shirt"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	armor = list(melee = 15, bullet = 15, laser = 5,energy = 5, bomb = 5, bio = 0, rad = 5)
+	can_adjust = 0
+
 /obj/item/clothing/under/f13/settler
 	name = "settler outfit"
 	desc = "It's more or less a crudely made tan robe with a makeshift belt made from cloth.<br>Paired with worn grey pants."
@@ -1028,6 +1038,8 @@
 	desc = "The regulation clothing worn by the vault dwellers of Vault-Tec vaults. It's made of sturdy leather.<br>This jumpsuit has number 13 on the back."
 	icon_state = "vault13"
 	item_color = "vault13"
+
+
 
 //Fallout 13 goes rampage at this point. The following uniforms provide decent deffence bonus.
 
