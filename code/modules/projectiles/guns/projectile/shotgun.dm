@@ -167,6 +167,21 @@
 	else
 		user << "<span class='warning'>[src] is empty!</span>"
 
+// MAX SAWN OFF //
+
+/obj/item/weapon/gun/projectile/revolver/max_sawn_off
+	name = "worn sawn off"
+	desc = "Someone took the time to chop the last few inches off the barrel and stock of this shotgun. You see word 'Max' engraved on grip"
+	icon_state = "max_sawn_off"
+	item_state = "shotgun"
+	w_class = 3
+	force = 12
+	unique_reskin = 0
+	origin_tech = "combat=4;materials=2"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/mad
+	fire_sound = 'sound/f13weapons/max_sawn_off.ogg'
+
+
 
 // IMPROVISED SHOTGUN //
 
@@ -300,3 +315,4 @@
 	origin_tech = "combat=5;materials=2"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com
 	w_class = 5
+
