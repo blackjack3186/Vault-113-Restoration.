@@ -392,6 +392,18 @@
 	mask = /obj/item/clothing/mask/breath
 	suit_store = /obj/item/weapon/tank/internals/oxygen
 
+/datum/outfit/mad_max
+	name = "Mad Max"
+	uniform = /obj/item/clothing/under/pants/black
+	shoes = /obj/item/clothing/shoes/sneakers/black
+	gloves = /obj/item/clothing/gloves/fingerless
+	suit = /obj/item/clothing/suit/f13/mfp
+	suit_store = /obj/item/weapon/gun/projectile/revolver/max_sawn_off
+	l_pocket = /obj/item/weapon/switchblade
+	back = /obj/item/weapon/storage/backpack/satchel
+	backpack_contents = list(/obj/item/weapon/storage/box/lethalshot=1)
+
+
 
 
 
