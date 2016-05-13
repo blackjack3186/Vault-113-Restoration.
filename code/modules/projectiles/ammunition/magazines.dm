@@ -98,6 +98,11 @@
 /obj/item/ammo_box/magazine/internal/shot/dual
 	name = "double-barrel shotgun internal magazine"
 	max_ammo = 2
+	
+/obj/item/ammo_box/magazine/internal/shot/mad
+	name = "mad sawn-off internal magazine"
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	max_ammo = 2
 
 /obj/item/ammo_box/magazine/internal/shot/improvised
 	name = "improvised shotgun internal magazine"
