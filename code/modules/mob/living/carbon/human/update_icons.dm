@@ -184,14 +184,14 @@ Please contact me on #coderbus IRC. ~Carnie x
 		if(!t_color)		t_color = w_uniform.icon_state
 
 		var/image/standing
+		var/G = (gender == FEMALE) ? "f" : "m"
 
 		if(dna && dna.species.sexes)
-			var/G = (gender == FEMALE) ? "f" : "m"
 			if(G == "f" && U.fitted != NO_FEMALE_UNIFORM)
-				standing = U.build_worn_icon(state = "[t_color]_s", default_layer = UNIFORM_LAYER, default_icon_file = 'icons/mob/uniform.dmi', isinhands = FALSE, femaleuniform = U.fitted)
+				standing = U.build_worn_icon(state = "[t_color]_s", default_layer = UNIFORM_LAYER, default_icon_file = 'icons/mob/uniform.dmi', isinhands = FALSE, femaleuniform = U.fitted, usergender=G, altf_icon_file = 'icons/obj/clothing/uniform_f.dmi')
 
 		if(!standing)
-			standing = U.build_worn_icon(state = "[t_color]_s", default_layer = UNIFORM_LAYER, default_icon_file = 'icons/mob/uniform.dmi', isinhands = FALSE)
+			standing = U.build_worn_icon(state = "[t_color]_s", default_layer = UNIFORM_LAYER, default_icon_file = 'icons/mob/uniform.dmi', isinhands = FALSE, usergender=G, altf_icon_file = 'icons/obj/clothing/uniform_f.dmi')
 
 		overlays_standing[UNIFORM_LAYER]	= standing
 
@@ -209,7 +209,6 @@ Please contact me on #coderbus IRC. ~Carnie x
 		wear_id.screen_loc = ui_id	//TODO
 		if(client && hud_used)
 			client.screen += wear_id
-
 		//TODO: add an icon file for ID slot stuff, so it's less snowflakey
 		var/image/standing = wear_id.build_worn_icon(state = wear_id.item_state, default_layer = ID_LAYER, default_icon_file = 'icons/mob/mob.dmi')
 		overlays_standing[ID_LAYER] = standing
@@ -227,7 +226,6 @@ Please contact me on #coderbus IRC. ~Carnie x
 
 		var/t_state = gloves.item_state
 		if(!t_state)	t_state = gloves.icon_state
-
 		var/image/standing = gloves.build_worn_icon(state = t_state, default_layer = GLOVES_LAYER, default_icon_file = 'icons/mob/hands.dmi')
 
 		overlays_standing[GLOVES_LAYER]	= standing
@@ -250,7 +248,6 @@ Please contact me on #coderbus IRC. ~Carnie x
 			client.screen += glasses				//Either way, add the item to the HUD
 
 		if(!(head && (head.flags_inv & HIDEEYES)))
-
 			var/image/standing = glasses.build_worn_icon(state = glasses.icon_state, default_layer = GLASSES_LAYER, default_icon_file = 'icons/mob/eyes.dmi')
 			overlays_standing[GLASSES_LAYER] = standing
 
@@ -280,7 +277,6 @@ Please contact me on #coderbus IRC. ~Carnie x
 			if(hud_used.inventory_shown)			//if the inventory is open ...
 				shoes.screen_loc = ui_shoes			//...draw the item in the inventory screen
 			client.screen += shoes					//Either way, add the item to the HUD
-
 		var/image/standing = shoes.build_worn_icon(state = shoes.icon_state, default_layer = SHOES_LAYER, default_icon_file = 'icons/mob/feet.dmi')
 		overlays_standing[SHOES_LAYER]	= standing
 
@@ -343,8 +339,8 @@ Please contact me on #coderbus IRC. ~Carnie x
 			if(hud_used.inventory_shown)					//if the inventory is open ...
 				wear_suit.screen_loc = ui_oclothing	//TODO	//...draw the item in the inventory screen
 			client.screen += wear_suit						//Either way, add the item to the HUD
-
-		var/image/standing = wear_suit.build_worn_icon(state = wear_suit.icon_state, default_layer = SUIT_LAYER, default_icon_file = 'icons/mob/suit.dmi')
+		var/G = (gender == FEMALE) ? "f" : "m"
+		var/image/standing = wear_suit.build_worn_icon(state = wear_suit.icon_state, default_layer = SUIT_LAYER, default_icon_file = 'icons/mob/suit.dmi', usergender=G, altf_icon_file = 'icons/obj/clothing/suit_f.dmi')
 		overlays_standing[SUIT_LAYER]	= standing
 
 		if(istype(wear_suit, /obj/item/clothing/suit/straight_jacket))
@@ -453,7 +449,7 @@ generate/load female uniform sprites matching all previously decided variables
 
 
 */
-/obj/item/proc/build_worn_icon(var/state = "", var/default_layer = 0, var/default_icon_file = null, var/isinhands = FALSE, var/femaleuniform = NO_FEMALE_UNIFORM)
+/obj/item/proc/build_worn_icon(var/state = "", var/default_layer = 0, var/default_icon_file = null, var/isinhands = FALSE, var/femaleuniform = NO_FEMALE_UNIFORM, var/usergender = "n", var/altf_icon_file = null)
 
 	//Find a valid icon file from variables+arguments
 	var/file2use
@@ -470,10 +466,15 @@ generate/load female uniform sprites matching all previously decided variables
 		layer2use = default_layer
 
 	var/image/standing
-	if(femaleuniform)
-		standing = wear_female_version(state,file2use,layer2use,femaleuniform)
-	if(!standing)
-		standing = image("icon"=file2use, "icon_state"=state,"layer"=-layer2use)
+	if (usergender=="f")
+		var/list/allfemale = icon_states(icon(altf_icon_file))
+		if (allfemale.Find(state))
+			standing = image("icon"=altf_icon_file, "icon_state"=state,"layer"=-layer2use)
+	if (!standing)
+		if(femaleuniform)
+			standing = wear_female_version(state,file2use,layer2use,femaleuniform)
+		else
+			standing = image("icon"=file2use, "icon_state"=state,"layer"=-layer2use)
 
 	//Get the overlay images for this item when it's being worn
 	//eg: ammo counters, primed grenade flashes, etc.
