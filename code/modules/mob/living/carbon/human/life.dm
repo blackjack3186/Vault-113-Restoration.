@@ -43,6 +43,7 @@
 
 		//heart attack stuff
 		handle_heart()
+		handleorgans()
 
 		//Stuff jammed in your limbs hurts
 		handle_embedded_objects()

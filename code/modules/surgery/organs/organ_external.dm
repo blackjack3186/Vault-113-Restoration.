@@ -18,7 +18,29 @@
 	var/burn_dam = 0
 	var/max_damage = 0
 	var/list/embedded_objects = list()
+	var/bandaged = 0 //heal slowly while bandaged
+	var/bandduration = 60
+	var/bandheal = 1
 
+/obj/item/organ/limb/proc/applyband(usr)
+	if (bandaged>0)
+		usr << "<span class='warning'>The wound have already been bandaged!</span>"
+		return 0
+	else
+		if (!brute_dam)
+			usr << "<span class='warning'>You can't find the wound!</span>"
+			return 0
+		bandaged = bandduration
+		return 1
+
+/obj/item/organ/limb/proc/processorgan()
+	if (bandaged>0)
+		if (brute_dam>0)
+			brute_dam = max(brute_dam-bandheal, 0)
+		else
+			bandaged = 0
+			return
+		bandaged = bandaged - 1
 
 
 /obj/item/organ/limb/chest
