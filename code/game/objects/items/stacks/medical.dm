@@ -75,8 +75,11 @@
 			if(!H.bleedsuppress) //so you can't stack bleed suppression
 				H.suppress_bloodloss(stop_bleeding)
 		if(affecting.status == ORGAN_ORGANIC) //Limb must be organic to be healed - RR
-			if(affecting.heal_damage(src.heal_brute, src.heal_burn, 0))
-				H.update_damage_overlays(0)
+			if (src.heal_brute>0 && !affecting.applyband(user)) //testing only for brute damage first
+				return //don't waste bandage on bandaged limb
+			else
+				if(affecting.heal_damage(src.heal_brute, src.heal_burn, 0))
+					H.update_damage_overlays(0)
 
 			M.updatehealth()
 		else

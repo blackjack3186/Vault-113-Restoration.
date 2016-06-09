@@ -123,6 +123,7 @@ datum/species/human/spec_death(gibbed, mob/living/carbon/human/H)
 	roundstart = 1
 	brutemod = 0.2
 	burnmod = 0.25
+	speedmod = 3
 	armor = 25
 	specflags = list(EYECOLOR)
 	mutant_bodyparts = list()

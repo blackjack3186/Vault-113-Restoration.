@@ -774,6 +774,12 @@
 
 			..()
 
+/mob/living/carbon/human/proc/handleorgans()
+	for (var/obj/item/organ/limb/organlimb in organs)
+		if (organlimb)
+			organlimb.processorgan()
+
+
 /*/mob/living/carbon/human/proc/handle_heart_beat()   //Someone pls. Make the shit work.
 
 	if(pulse == PULSE_NONE) return

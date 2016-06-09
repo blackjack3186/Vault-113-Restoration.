@@ -87,6 +87,19 @@
 	if(user.client)
 		user.client.view = view_range
 
+/obj/vehicle/proc/movevehiclewithouttimecheck(mob/user, direction)
+	if(!Process_Spacemove(direction) || !has_gravity(src.loc)|| !isturf(loc))
+		return
+	step(src, direction)
+
+/obj/vehicle/proc/movebasedondelay(direction)
+	step(src, direction)
+	if (vehicle_move_delay<1)
+		var/addsteps = (1 - vehicle_move_delay)*10
+		var/stepcounter
+		for (stepcounter = 0; stepcounter<addsteps; ++stepcounter)
+			step(src, direction)
+
 //MOVEMENT
 /obj/vehicle/relaymove(mob/user, direction)
 	if(user.incapacitated())
@@ -97,7 +110,7 @@
 			return
 		next_vehicle_move = world.time + vehicle_move_delay
 
-		step(src, direction)
+		movebasedondelay(direction)
 
 		if(buckled_mob)
 			if(buckled_mob.loc != loc)
