@@ -416,7 +416,7 @@
 	icon_state = "t45bpowerarmor"
 	item_state = "t45bpowerarmor"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	armor = list(melee = 70, bullet = 50, laser = 50, energy = 50, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 70, bullet = 50, laser = 50, energy = 50, bomb = 50, bio = 100, rad = 100)
 	slowdown = 3
 	flags_inv = HIDEJUMPSUIT
 	put_on_delay = 100
@@ -428,7 +428,7 @@
 	icon_state = "t45dpowerarmor"
 	item_state = "t45dpowerarmor"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	armor = list(melee = 80, bullet = 60, laser = 60, energy = 60, bomb = 60, bio = 100, rad = 20)
+	armor = list(melee = 80, bullet = 60, laser = 60, energy = 60, bomb = 60, bio = 100, rad = 100)
 	slowdown = 2
 	flags = STOPSPRESSUREDMAGE
 	flags_inv = HIDEJUMPSUIT
@@ -443,7 +443,7 @@
 	item_state = "advpowerarmor"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	slowdown = 1
-	armor = list(melee = 90, bullet = 70, laser = 70, energy = 70, bomb = 70, bio = 100, rad = 50)
+	armor = list(melee = 90, bullet = 70, laser = 70, energy = 70, bomb = 70, bio = 100, rad = 100)
 	flags = STOPSPRESSUREDMAGE
 	flags_inv = HIDEJUMPSUIT
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
